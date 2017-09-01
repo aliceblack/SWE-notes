@@ -1,0 +1,21 @@
+language:
+- generic
+sudo: true
+dist: trusty
+before_install:
+- sudo apt-get update -qq
+- sudo apt-get install texlive-latex-base
+script:
+- mkdir build
+- pdflatex -output-directory build main.tex
+before_deploy:
+- git fetch --tags
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure:
+  file: build/main.pdf
+  on:
+    repo: aliceblack/LatexTravisBoilerplate
+    tags: true
