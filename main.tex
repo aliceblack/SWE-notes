@@ -1,0 +1,1509 @@
+\documentclass{report}
+\begin{document}
+
+slides + appunti + riassunti da mega
+
+L1
+
+-efficacia: garantire la qualità dei prodotti, determinata dal grado di conformità del prodotto rispetto alle norme vigenti e agli obiettivi prefissati. Conformità -> obiettivi e strategie -> pdq.
+
+-efficienza: contenere i costi e i tempi di produzione, inversamente proporzionale alla quantità di risorse impiegate nell’esecuzione delle attività richieste.
+
+-massimizzare efficacia ed efficienza: Riuscire a soddisfare obiettivi prefissati entro limiti certi di tempo e di sforzo.
+
+manutenibilità: è una qualità del software; 
+->può essere correttiva per correggere difetti eventualmente rilevati; 
+->adattiva per adattare il sistema alla variazione dei requisiti; 
+->evolutiva per aggiungere funzionalità al sistema.
+
+-best practice: Prassi (modo di fare) che per esperienza e per studio abbia mostrato di garantire i migliori risultati in circostanze note e specifiche.
+
+-stake holder: portatori d'interesse, L’insieme di persone a vario titolo coinvolte nel ciclo di vita del SW, che hanno influenza sul prodotto o sul processo.
+
+-swe: L’approccio sistematico, disciplinato e quantificabile allo sviluppo, l’uso, la manutenzione e il ritiro del SW(glossario ieee).
+L’applicazione di principi ingegneristici al SW, Il controllo di efficienza ed efficacia ha bisogno di un approccio sistematico.
+Approccio Sistematico = metodico, rispettare un metodo noto, una check-list, secondo un certo ordine. Seguendo norme di condotta, aderendo a standard.
+Approccio Disciplinato = insieme di norme che seguo, o meglio ancora delle best practice.
+Approccio Quantificabile = so quanto consumerò, con una stima ragionevole.
+Approccio ingegneristico: Disciplinato, sistematico, quantificabile.
+
+-Pianificazione: Organizzare e controllare tempo, risorse e risultati.
+-Analisi dei requisiti: Definire cosa bisogna fare.
+-Progettazione: Definire come bisogna farlo.
+-Realizzazione: Farlo con la massima efficienza e la massima efficacia.
+-Verifica e validazione: Assicurare che quanto fatto soddisfi i requisiti e non contenga errori.
+-Manutenzione: Assicurare piena utilizzabilità del SW fino al momento del suo ritiro.
+
+L2(+L1)
+-ciclo di vita del sw: Gli stati che il prodotto assume dal concepimento al ritiro.
+Per organizzare al meglio le attività necessarie all’interno di vincoli dati di tempo, di risorse e di obiettivi.
+Stati sono Concezione → sviluppo → utilizzo → ritiro.
+
+-Processi di ciclo di vita: Specificano le attività che vanno svolte per causare transizioni di stato nel ciclo di vita di un prodotto SW.
+
+-Modelli di ciclo di vita: Descrivono come i processi si relazionano tra loro nel tempo rispetto agli stati di ciclo di vita.
+Base concettuale intorno alla quale pianificare, organizzare, eseguire e controllare lo svolgimento delle attività necessarie.
+Vederlo come una macchina a stati, stati rappresentano il grado di maturazione del prodotto SW, archi (transizioni di stato) sono l’insieme di attività svolte sul prodotto che servono a farlo avanzare nel grado di maturazione.
+
+(da L3)
+Il modello di ciclo di vita adottato pone vincoli su pianificazione e gestione del progetto, indipendente da metodi e strumenti. 
+Descrivono come i processi si evolvono nel tempo rispetto agli stati nel ciclo di vita.
+L’adozione di un modello richiede un sistema di qualità per garantire e misurare conformità e maturità.
+[La durata temporale entro uno stato di ciclo di vita o in una transizione tra essi viene detta «fase»]
+
+-code and fix, raggiungere la correttezza “by correction”.
+-sequenziale a cascata: fasi definite per attività previste e prodotti attesi in ingresso e in uscita, contenuto e struttura dei documenti, scadenze. Fasi distinte fra loro. Il modello originale prevede che non si possa mai essere in due stati diversi allo stesso tempo e che non si possa tornare ad uno stato. Non ammete variazione requisiti. Passaggio di fase basato su documentazione. Il passaggio da una fase alla successiva è basato sulla documentazione, ogni fase produce documenti che la concretizzano e devono essere approvati per il passaggio alla fase successiva. Corretto in cascata con ritorni.
+
+---incrementali: producono valore ad ogni incremento, funzionalità essenziali sono sviluppate nei primi incrementi. Incremento è quantificabile.
+Incremento = Procedere per incrementi significa aggiungere a un impianto base.
+---iterativi adattamento. iterazione non quantificabile. 
+Iterazione = Procedere per iterazioni significa operare raffinamenti o rivisitazioni.
+
+-incrementale:  approssimare la soluzione per incrementi, requisiti utente sono classificati e trattati in base alla loro importanza strategica. [Ogni incremento attraversa tutte le fasi del modello sequenziale]
+
+-evolutivo: rispondere a bisogni non inizialmente preventivabili, può richiedere il rilascio e il mantenimento di più versioni del prodotto
+simultaneamente disponibili usabili dall'utente, può richiedere rilascio più versioni. Riattraversamento più fasi di ciclo di vita. 
+
+-a spirale: Cicli interni rapidi e ripetuti, dedicati ad analisi e sviluppi prototipali(ANALISI DEI RISCHI). Cicli esterni che aderiscono a un qualsiasi altro modello standard di ciclo di vita. Ad ogni ciclo si analizzano i rischi e si compiono simulazioni. 
+Attività principali per ogni ciclo: Definizione degli obiettivi, Analisi dei rischi, Sviluppo e validazione, Pianificazione (del prossimo ciclo).
+
+-a componenti: molto di quello che ci serve fare è già stato fatto e molto di quello che faremo ci potrà servire ancora. Riuso sistematico di componenti preesistenti proprie oppure “off-the-shelf”. [vedi riuso]
+
+-agili: Backlog, sprint, daily scrum, incrementi devono essere funzionanti, pezzi realizzabili.
+1) Individuals and interactions over processes and tools L’eccessiva rigidità ostacola l’emergere del valore
+2) Working sofware over comprehensive documentation La documentazione non sempre corrisponde a SW funzionante
+3) Customer collaboration over contract negotiation L’interazione con gli stakeholder va incentivata e non ingessata
+4) Responding to change over following a plan La capacità di adattamento al cambiare delle situazioni è importante.
+
+-controllo di versione: ciò che è oggetto di manutenzione ha una storia(il controllo di versione) che va gestita con controllo di versione.
+
+-configurazione: Se un insieme è composto di parti, quali esse sono e il modo in cui esse devono stare insieme è detto “configurazione”,
+ogni sistema fatto di parti va gestito con controllo di configurazione. Ogni configuration item ha una sua versione(storia).
+
+[[[da fiup risposta verbosa:
+- configurazione
+definizione Un insieme è composto di parti; il modo in cui tali parti stanno assieme viene detto configurazione.
+
+- controllo della configurazione
+Se ho una configurazione, è necessario farne un controllo per gestire la configurazione, usufruendo di regole per la configurazione che devono essere pianificate.
+
+- gestione della configurazione
+Lo standard ISO/IEC 12207 definisce un processo di supporto dedicato alla configurazione: si tratta del processo organizzativo gestione della configurazione.
+Tale processo è bene che sia altamente automatizzato, ad esempio ricorrendo all'utilizzo di sistemi di build automatici, riguardo alle attività previste da questo processo, ovvero: l'identificazione dei CI che compongono una configurazione, la gestione di baseline (intesi come insieme di CI consolidato ad una specifica milestone), la gestione delle modifiche attraverso issue tracking per renderle traccibili e il controllo di versione.
+
+- configuration item
+Un configuration item rappresenta un singolo elemento, oggetto della configurazione del prodotto; ogni CI deve avere identità unica.
+
+- versionamento:
+- controllo di versione
+Tutto ciò che è in manutenzione ha una storia, che va gestita mediante un controllo di versione. E' importante notare che non controllo la versione del prodotto, bensì la versione dei CI del prodotto.
+Il controllo di versione si appoggia su un repository, e permette in tal modo di lavorare localmente evintando sovrascritture accidentali (check-out) e condividere le modifiche nello spazio comune (check-in)
+
+- repository
+Un repository è dato da un filesystem con una root, ed è un database centralizzato contenente i vari CI di ogni baseline, nella loro storia completa. Nel repository voglio farci entrare solamente prodotti che rispettino le metriche.
+
+- versionamento
+E' un'attività del controllo di configurazione.
+Due termini importanti quando parliamo di versione, sono repository, come già visto, e commit, che rapprenta un atto tracciato attraverso il quale una persona può affermare di aver completato il proprio lavoro (metodo push). Per controllare i prodotti che entrano nella repository è bene ricorrere a meccanismi in cui candido il mio lavoro, con una verifica automatizzata su tale lavoro.
+]]]
+
+-Prototipo: 
+Serve per provare e scegliere soluzioni Può essere “usa e getta” (nel caso delle iterazioni) oppure fornire stati di incremento (baseline). Necessità di fornire / utilità di cercare evidenza preliminare di fattibilità. Baseline è stato di incremento, punto di arrivo tecnico dal quale non scendo, risultato sulla quale baso l'incremento. [vedi baseline]
+
+-Riuso: 
+Occasionale (opportunistico) – «copia-incolla» a basso costo e scarso impatto. 
+Sistematico (per progetto, per prodotto, per azienda) a maggior costo ma maggior impatto.
+(da L7)
+
+Riuso: 
+Capitalizzare sottosistemi già esistenti
+->Impiegandoli più volte per più prodotti
+->Ottenendo minor costo realizzativo
+->Ottenendo minor costo di verifica
+
+Problemi del riuso:
+->Progettare per riuso è più difficile (Bisogna anticipare bisogni futuri) 
+->Progettare con riuso non è immediato (Bisogna minimizzare le modifiche alle componenti riusate per non perderne il valore)
+
+Riuso è Puro costo nel breve periodo -> Diventa risparmio nel medio termine (quindi è un investimento) 
+
+
+-processo: Un processo è un insieme di attività correlate e coese che trasformano ingressi in uscite secondo regole fissate, consumando risorse nel farlo (Glossario ISO 9000).
+
+-Lo standard come modello di azione: Definizione e imposizione di procedure, Definizione e proposizione di processi da specializzare
+-Lo standard come modello di valutazione: Identificazione di “best practice” CMMI, SPICE, ISO/IEC TR 15504.
+
+Standard di processo: è un cuneo che non mi fa scendere, non peggioro.
+
+
+-modello ad alto livello: identifica processi sviluppo sw, responsabilità sui processi, identifica prodotti dei processi.
+
+ISO/IEC 12207 è il modello più noto e riferito per lo standard (generale) di processo, modello ad alto livello, identifica i processi dello sviluppo software, descrive i processi in termini di attività e compiti elementari, i prodotti dei processi, specifica le responsabilità sui processi.
+
+-processi primari: se ci sono allora esiste il progetto; acquisizione= gestione fornitori; fornitura= gestione rapporto con clienti; sviluppo; gestione operativa= utilizzo, installazione erogazione prodotti/servizi; manutenzione= correzione adattamento evoluzione.
+
+-processi di supporto: procedure da chiamare quando  ne si ha il bisogno; documentazione, accertamento qualità, gestione versioni e configurazione, qualità=verifica+validazione, revisioni congiunte con il cliente, verifiche ispettive interne, risoluzione dei problemi.
+
+-processi organizzativi: per il lavoro collaborativo e l'ambiente, defiiscono la struttura organizzativa a precindere dal prodotto; gestione processi, gestione infrastrutture, miglioramento del processo, formazione del personale.
+
+Fine L2
+
+-modularità: I processi sono tra loro relazionati in modo chiaro e distinto.
+-coesione: Le attività di processo sono ben definite e correlate tra di loro (e così anche i compiti al loro interno).[vedi coesione]
+
+-Processo standard: Riferimento di base generico, condiviso tra aziende diverse nello stesso dominio applicativo.
+-Processo definito: Specializzazione di processo standard, per adattarlo alle specifiche esigenze e caratteristiche aziendali.
+-Processo di progetto: Istanziazione di processi definiti, utilizzano risorse aziendali per raggiungere obiettivi prefissati e limitati nel tempo, cioè progetti.
+
+-PDCA: Organizzazione interna dei processi incentrata sul principio del miglioramento continuo (W.A. Shewhard, W.E. Deming)
+Pianificare (Plan): definire attività, scadenze, responsabilità, risorse utili a raggiungere specifici obiettivi di miglioramento, gestione risorse!
+Eseguire (Do): eseguire le attività secondo P, realizzazione prodotto! Esecuzione della pinaificazione.
+Valutare (Check): verificare l’esito delle azioni di miglioramento rispetto alle attese, misurazione e analisi. Si studiano i risultati della fase precedente (do) e li si cofrontano con gli obiettivi individuati nella prima fase (plan). Valutazione dei risultati ottenuti e confronto con le previsioni della pianificazione.
+Agire (Act): applicare correzioni alle carenze rilevate e standardizzare quanto è andato bene. Correzione delle criticità, presa d'atto di risultati positivi con relativa standardizzazione dei processi corretti.
+
+L4
+
+-log è l'evento che lascia la traccia
+-push/pull alternative di richiesta informazione
+Effettuare misurazioni allo scopo di massimizzare l'efficienza ricevendo informazioni in modo push.
+
+-ruolo = funzione aziendale assegnata a progetto.
+-profilo professionale = competenze tecnologiche, esperienza, requisiti per assunzione di un ruolo in un progetto.
+
+Ruoli
+-responsabile: rappresenta il progetto, responsabilità di pianificazione, risorse umane, gestione costi. Redazione e manutenzione di regole e procedure di lavoro.
+-amministratore: amministra risorse e infrastrutture, gestione documentazione, controllo versione+configurazione, risoluzione problemi legati alla gestione processi. Predispone strumenti e regole.
+-analista: analisi requisiti, capisce il problmea non sviluppa la soluzione.
+-progettista: sviluppa la soluzione.
+-programmatore: puro esecutore.
+-verificatore: verifica ciò che è stato fatto dagli altri, che sia corretto e soddisfi le attese.
+
+-Work Breakdown Structure: scomporre attività in sottoattività. Attribuibili ad individui.
+-Gantt: rappresentare durata, confronto stime e progressi, sequenzialità e parallelismo (non adatto per dipendenze).
+-PERT: dipendenze temporali tra attività, slack. Un tale diagramma è un grafo orientato dove gli archi rappresentano le attività, mentre i nodi sono degli eventi. Ogni evento ha una data minima a partire da cui può accadere e una data massima oltre la quale esso ritarda gli eventi successivi; la differenza tra questi due tempi è detta slack time.
+
+COCOMO constructive cost model m/p=CxMxD\^s
+funzione matematica che produce in uscita un valore in tempo/persona.
+fattori statici che compaiono identificano:
+C complessità del progetto. Valore soggettivo che decresce con l’esperienza (valore basso, modesta complessità; valore alto, alta complessità).
+D dimensione stimata del prodotto (diversa dalla complessità) anch’essa dipendente dall’esperienza misurato in KDSI (Kilo Delivered Source Instruction), è l'unità di misura della dimensione stimata del prodotto software D, in cui si esprime la dimensione del prodotto che rappresenta il peso del codice sorgente consegnato richiesto per il progetto.
+M moltiplicatori di costo, dice che altri elementi del progetto (anche esterni) incidono nella dimensione del progetto (ad esempio una collaborazione remota tra gli sviluppatori..)
+S fattore di complessità (del codice)
+Bassa complessità: tutti gli sviluppatori coinvolti sul progetto hanno una buona visione dei contenuti del progetto
+Media complessità: per capire tutto bisogna tornare al “divide et impera”, capendo le parti singole ma nel complesso un po’ meno
+Elevata complessità (embedded): il prodotto interagisce con componenti esterne che non sono parte del progetto sulle quali noi abbiamo zero influenza
+[...]
+
+-Identificazione dei rischi: In relazione al progetto, al prodotto, al business.
+-Analisi dei rischi: Valutazione della probabilità di occorrenza, Valutazione delle conseguenze.
+-Verifica del livello di rischio da effettuare su base regolare per determinare il livello corrente di rischio.
+Fonti di rischio:
+◦ tecnologie
+◦ rapporti interpersonali
+◦ organizzazione del lavoro
+◦ requisiti e rapporti con gli stakeholder
+◦ tempi e costi
+
+L5
+
+Massima efficacia nel prodotto con massima efficienza nel lavoro.
+
+I documenti sono utili se e solo se sono sempre disponibili, chiaramente identificati, corretti nei contenuti, verificati e approvati, aggiornati, datati e dotati di versione.
+La loro diffusione deve essere controllata, I destinatari devono essere chiaramente identificati, Ogni documento ha una sua lista di distribuzione, L’amministratore gestisce le liste di distribuzione e ne assicura il rispetto.
+
+Milestone: obbligo/opportunità misuratore di avanzamento di progresso. Indica un punto nel tempo (calendario). Importanti traguardi intermedi nello svolgimento del progetto. Ogni milestone di calendario è associata a uno specifico insieme di baseline. Indica importanti traguardi intermedi nello svolgimento del progetto.
+Le milestone servono per fissare dei punti di avanzamento significativi rispetto agli obiettivi stabiliti e al tempo a disposizione. Un progettista assegna milestone che hanno una distanza tale per cui arrivarci significa raggiungere un punto importante: infatti, ogni milestone corrispone a una specifica configurazione del sistema. Ogni milestone ha un proprio nome se associata a una configurazione detta baseline.
+
+Baseline:  è stato di incremento, punto di arrivo tecnico dal quale non scendo, risultato sulla quale baso l'incremento. Campobase punto di arrivo tecnico, vicino alla fine, realizzazione stabile, risultato sulla quale basare il successivo incremento, si può tornare a baseline precedenti. E' il prodotto tangibile, associato alle milestone.
+Quello di baseline indica un punto d’arrivo tecnico dal quale non si retrocede; la baseline è fatta di elementi della configurazione e, poiché ogni parte è versionata, possiamo conoscere la differenza tra una baseline e l’altra. Una baseline è qualcosa di stabile — non usa e getta! — e sta in un repository; serve da base per gli avanzamenti futuri e può essere cambiata solo tramite procedure di controllo di cambiamento.
+2. La baseline è una versione approvata di un configuration item che è stata formalmente progettata e definita (/sistemata, ”fixed”) in un momento specifico del ciclo di vita del configuration item. [SWEBok 6-7]
+3. Una baseline è una collezione delle versioni dei componenti che compongono un sistema. Le baseline sono controllate, il che significa che le versioni dei componenti che compongono il sistema non possono essere cambiate e che è sempre possibile ricreare una baseline a partire dai componenti che la costituiscono. [Sommerville, pag 684]
+
+Controllo di baseline: L’insieme di CI consolidato a una specifica milestone.
+Base verificata, approvata e garantita per la prosecuzione dello sviluppo.
+L’esistenza di baseline ben identificate permette Riproducibilità, Tracciabilità, Analisi e confronto.
+
+Le richieste di modifiche hanno origine da Utenti (difetti o mancanze) Sviluppatori (idem) Competizione (valore aggiunto).
+Le richieste di modifica vanno sottoposte a un rigoroso processo di analisi, decisione, realizzazione e verifica.
+Ogni richiesta/proposta di modifica va inoltrata in modo formale -> Change request.
+Di ogni richiesta di modifica bisogna tenere traccia di: Issue tracking(sistema informatico che gestisce e registra delle liste di richieste di assistenza o di problemi) o ticketing e di Stato corrente ed eventuale esito chiusura.
+Si appoggia su un repository->DB centralizzato nel quale risiedono - individualmente – tutti i CI di ogni baseline nella loro storia completa. Permette a ciascuno di lavorare su vecchi e nuovi CI senza rischio di sovrascritture accidentali e di condividere il lavorato nello spazio comune.
+Build = Verifica la bontà di ogni modifica di baseline.
+Versione = Istanza di prodotto funzionalmente distinta dalle altre.
+Variante = Istanza di prodotto funzionalmente identica ad altre ma diversa per caratteristiche non funzionali.
+Rilascio (release) = Istanza di prodotto resa disponibile a utenti esterni.
+Tutte vanno identificate, pianificate e gestite.
+
+L6
+
+Way of working: crea requisiti, verifico ma non valido la way of working.
+Le norme di progetto descrivono come dovrà essere il way of working.
+Individuiamo due categorie di norme: regole (sottoposte a verifica) e raccomandazioni (suggerimenti, senza verifica).
+
+-Qualifica = Verifica+Validazione due processi distinti la cui unione da la qualifica.
+-Verifica: Accertare che l’esecuzione delle attività di processo non abbia introdotto errori "did i build the system right". Rivolta ai processi ma viene svolta sui loro prodotti per accertare il rispetto di regole, convenzioni e procedure; accerta il rispetto di norme e procedure.
+-Validazione: "did i build the right system"Accertare che il prodotto realizzato corrisponda alle attese, rivolto ai prodotti finali; che prodotto finale sia conforme, soddisfi requisiti.
+Self fulfilling prophecy, dico prima so che accade, attività preventive di verifica che diano informazione, applicata al modo in cui lavoro.
+
+Requisiti
+Condizione (capability) necessaria a un utente per risolvere un problema o raggiungere un obiettivo
+Condizione (capability) che deve essere soddisfatta o posseduta da un sistema per adempiere a un obbligo
+
+Analisi
+Studio dei bisogni e delle fonti;
+Classificazione dei requisiti;
+Modellazione concettuale del sistema (visione Use Case): Partizionamento in componenti (ambiti) a scopo di allocazione dei requisiti (con diagrammi dei casi d’uso);
+Assegnazione dei requisiti a parti distinte del sistema;
+Negoziazione con il committente e con i sotto-fornitori.
+
+Gli attributi di prodotto definiscono le caratteristiche richieste al sistema, Requisiti funzionali, prestazionali, di qualità (di prodotto).
+Gli attributi di processo pongono vincoli sui processi impiegati nel progetto, come farlo,requisiti di vincolo (realizzativo, normativo, contrattuale).
+
+I requisiti hanno diversa utilità strategica:
+-Obbligatori Irrinunciabili per qualsiasi stakeholder;
+-Desiderabili Non strettamente necessari ma a valore aggiunto riconoscibile;
+-Opzionali Relativamente utili oppure contrattabili in seguito.
+I requisiti non devono essere in conflitto tra loro.
+
+Distinguiamo tra requisiti utente (di alto livello) e requisiti di sistema (più dettagliati).
+
+L'incontro tra bisogno e soluzione viene chiamato tracciamento(l’incontro dei bisogni e dei requisiti,fornisce un dato quantitativo, indica quanti requisiti sono stati soddisfatti,nessuna funzionalità superflua, nessun componente ingiustificato,Tracciare un requisito significa motivarne l’esistenza, spiegando qual è l’origine di tale requisito, badando a garantire la necessità e la sufficienza di ogni requisito), serve al verificatore.
+
+-requisiti funzionali — descrivono i servizi che il sistema deve fornire 
+accertiamo il soddisfacimento dei requisiti funzionali attraverso test, dimostrazione formale e revisione.
+-requisiti non funzionali — i vincoli sui servizi che il sistema fornisce
+-requisiti prestazionali: definiscono quanto bene il sistema sta svolgendo determinate funzioni in certe particolari condizioni,
+accertiamo il soddisfacimento dei requisiti prestazionali attraverso misurazione.
+-requisiti qualitativi: servono a definire la qualità del prodotto
+accertiamo il soddisfacimento dei requisiti qualitativi attraverso verifiche ad hoc
+-requisiti di vincolo: sono imposti dal cliente o dall’ambiente operativo in cui funzionerà il sistema
+accertiamo il soddisfacimento dei requisiti di vincolo attraverso revisione.
+
+*************************************************************************************************************************
+L7 Progettazione Software
+
+La progettazione precede la produzione: costruzione a priori perseguendo la correttezza per costruzione invece che inseguendo la correttezza per correzione.
+Progettare per: Dominare la complessità del prodotto («divide-et-impera»); Organizzare e ripartire le responsabilità di realizzazione;
+Produrre in economia (efficienza); Garantire qualità (efficacia).
+
+(L’analisi risponde alla domanda: qual’è il problema, qual'è la cosa giusta da fare? Comprensione del dominio Discernimento di obiettivi, vincoli e requisiti, Approccio investigativo.)
+La progettazione risponde alla domanda: come farla giusta? Descrizione di una soluzione soddisfacente per tutti gli stakeholder; Il codice non esiste ancora; Prodotti: l’architettura scelta e i suoi modelli logici; Approccio sintetico.
+
+Enunciazione del problema --(analisi)--> Requisiti del problema --(progettazione)-->  Soluzione del problema
+
+Obiettivi della progettazione
++Soddisfare i requisiti con un sistema di qualità.
+
++Definendo l’architettura logica del prodotto
+Impiegando componenti con specifica chiara e coesa, realizzabili con risorse date e costi fissati, struttura che facilita eventuali cambiamenti futuri.
+
++ La scelta di una buona architettura facilita il successo
+Identificare schemi architetturali utili al caso e componenti riusabili.
+
++Dominare la complessità del sistema
+Suddividere il sistema fino a che ciascuna sua componente abbia complessità trattabile, per facilitare la comprensione e poterne assegnare la codifica a un singolo individuo.
+
++Spingere la progettazione nel dettaglio
+Sapendo riconoscere le componenti terminali(Quando il beneficio di ulteriore decomposizione è inferiore al costo di utilizzo), più minute le componenti più complessa la loro orchestrazione (Usare classi è più espressivo che usare registri di CPU).
+
+Architettura Definizione iso/iec 42010:2011
+-La decomposizione del sistema in componenti
+-L’ organizzazione di tali componenti (Definizione di ruoli, responsabilità, interazioni cioè chi fa cosa e come)
+-Le interfacce necessarie all’interazione tra le componenti tra loro e con l’ambiente (Come le componenti possono collaborare)
+-I paradigmi di composizione delle componenti (Regole, criteri, limiti, vincoli, anche a fini di manutenibilità).
+
+An architectural style is a named collection of architectural design decisions that:
+• are applicable in a given development context
+• constrain architectural design decisions that are specific to a particular system within that context
+• elicit beneficial qualities in each resulting system
+
+Esistono stili architetturali
+Aderire a uno «stile» garantisce coerenza e consistenza.
+Le «scelte architetturali» determinano l’organizzazione dell’informazione e l’interazione tra le parti.
+
+Qualità di una buona architettura
++Sufficienza: capacità di soddisfare tutti i requisiti.
++Comprensibilità: può essere capita dai portatori di interesse.
++Modularità: è suddivisa in parti chiare e ben distinte.
++Robustezza: è capace di sopportare ingressi diversi (giusti sbagliati tanti pochi) dall'utente e dall'ambiente.
++Flessibilità: permette modifiche a costo contenuto al variare dei requisiti.
++Riusabilità: sue parti possono essere utilmente impiegate in altre applicazioni.
++Efficienza: nel tempo nello spazio e nelle comunicazioni.
++Affidabilità (reliability):  è altamente probabile che svolga bene il suo compito quando utilizzata.
++Disponibilità (availability): necessita di poco o nullo tempo di manutenzione fuori linea(non tutto il sistema deve essere interrotto se qualche sua parte è sotto intervento).
++Sicurezza rispetto a malfunzionamenti (safety): è esente da malfunzionamenti gravi (il sistema dispone di un sufficiente grado di ridondanza per restare utilmente operativo anche in presenza di guasti locali).
++Sicurezza rispetto a intrusioni (security): i suoi dati e le sue funzioni non sono vulnerabilli a intrusioni.
++Semplicità: ogni parte contiene solo il necessario e niente di superfluo.
+
++Incapsulazione(information hiding): l'interno delle componenti non è visibile all'esterno. Le componenti sono “black box”, I suoi clienti ne conoscono solo l’interfaccia. La loro specifica nasconde gli algoritmi e le strutture dati usati al loro interno. Benefici: L’esterno non può fare assunzioni sull’interno; Cresce la manutenibilità; Diminuendo le dipendenze aumentano le opportunità di riuso.
+
++Coesione: le parti che stanno assieme hanno gli stessi obiettivi.
+L’orientamento ad oggetti aiuta molto a raggiungere la coesione : SOLID.
+Proprietà interna di singole componenti, Funzionalità “vicine” devono stare nella stessa componente, La modularità spinge a decomporre il grande in piccolo, La ricerca di coesione aiuta sia a decomporre che a porre un limite inferiore alla decomposizione.
+La coesione va massimizzata!
+Benefici: Maggiore manutenibilità e riusabilità, Minore interdipendenza fra componenti, Maggiore comprensione dell’architettura del sistema.
+Vi sono svariati tipi di coesione buona:
+- Funzionale, quando le parti concorrono al medesimo specifico compito;
+- Sequenziale, quando alcune azioni sono «vicine» ad altre per ordine di esecuzione e dunque conviene tenerle insieme;
+- Informativa, quando le parti agiscono sulla stessa unità di informazione.
+La coesione è una "forza attrattiva", "cose che stanno assieme", disgregate non hanno significato. Importante perchè voglio fare operazioni con il massimo sia dell'efficienza che dell'efficacia, ho ciò che mi serve, so farlo al meglio. Ci puntiamo al massimo, è un desiderio, ma è difficle raggiungerla. Oggetto (offrire metodi/funzionalità significative), oggetto che svolga funzione utile ha tali parti e non ha funzioni accessorie (toJSON() del quarto appello), se si ha qualcosa in più non è coeso. Né più né meno.
+
+teoria [coesione, le parti sono raccolte in gruppi che concorrono agli stessi obiettivi e sono strettamente e necessariamente coinvolte, è un indicatore di necessità dei membri che ci sono dentro, se ne manca uno non sono sufficienti, se ce n’è uno in più è superfluo!]
+
+teoria [accoppiamento L’accoppiamento è misurabile interpretando le componenti di un sistema come i nodi di un grafo orientato dove gli archi sono dipendenze di una componente nei confronti di un’altra. Il numero di archi entranti in una componente (fan-in) è indice di utilità, va massimizzato! Il numero di archi uscenti (fan-out) è indice di dipendenza da altre componenti, va minimizzato!]
+
++Basso accoppiamento: parti distinte dipendono poco o niente le une dalle altre. 
+•Parti diverse possono avere un grado di interdipendenza cattiva tra loro: 
+-Facendo assunzioni dall’esterno su come le parti facciano il loro mestiere all’interno (per variabili, locazioni, tipi)
+-Imponendo vincoli dall’esterno sull’interno di una parte (per ordine di azioni, uso di certi dati, formati, valori)
+-Condividendo frammenti delle stesse risorse (strutture dati)
+•Un sistema è un insieme organizzato Dunque ha necessariamente un po’ di accoppiamento (la buona progettazione lo tiene basso)
+•Indice di utilità FanIn -> function() -> FanOut  indice di dipendenza (accoppiamento)
+•L'accoppiamento è una proprietà esterna di componeti
+Il grado di utilizzo U reciproco di M componeti, U=MxM massimo accoppiamnto, U=0 accoppiamneto nullo.
+•Metriche: fanIn e fanOut strutturale  
+structuralFanIn, SFIN è indice di utilità -> massimizzare 
+structuralFanOut, SFOUT è indice di dipendenza -> minimizzare
+Una buona progettazione produce componenti con SFIN elevato.
+
+
+Progettazione architetturale
+Top-down: Decomposizione di problemi, Stile funzionale.
+Bottom-up: Composizione di soluzioni, Stile object-oriented.
+Meet-in-the-middle : Approccio intermedio Il più frequentemente seguito.
+
+libreria [a library is a collection of non-volatile resources, these may include configuration data, documentation, help data, message templates, pre-written code and subroutines, classes, values or type specifications. A library is also a collection of implementations of behavior, written in terms of a language, that has a well-defined interface by which the behavior is invoked]
+
+Framework
+-Insieme integrato di componenti SW prefabbricate, nel mondo pre-OO erano chiamate librerie
+Sono bottom-up perché fatti di codice già sviluppato
+Sono anche top-down se impongono uno stile architetturale
+-Utilissimi come base facilmente riusabile di diverse applicazioni entro un dato dominio
+Molti importanti esempi nel mondo J2EE e JS
+Spring (http://www.springsource.org/about) per architetture di business con MVC
+Struts (http://struts.apache.org/) per Web Apps in stile MVC
+Swing per GUI, ecc.
+
+Framework - Struttura di supporto su cui un software può essere organizzato e progettato.
+
+Pattern Architetturali
+-Soluzioni fattorizzate per problemi ricorrenti
+Metodo tipico dell’ingegneria classica
+La soluzione deve riflettere il contesto (La soluzione deve soddisfare il bisogno e non viceversa!)
+La soluzione deve essere credibile (dunque provata altrove)
+Esempi
+ Modello di cooperazione di tipo cliente-servente
+ Comunicazione a memoria condivisa o scambio di messaggi
+ Comunicazioni sincrone (interrogazione e attesa)
+ Comunicazioni asincrone (per eventi)
+
+Design Pattern:
+Soluzione progettuale a problema ricorrente.
+Definisce una funzionalità lasciando gradi di libertà d’uso (Ha corrispondenza precisa nel codice sorgente).
+Il corrispondente architetturale degli algoritmi che invece specificano procedimenti di soluzione.
+Rilevante nel SW a partire dalla pubblicazione di “Design Patterns” della Gang of Four.
+Per la progettazione a livello sistema si usano pattern architetturali!
+
+Design Pattern - Soluzione progettuale generale a un problema ricorrente. Una descrizione o un modello da applicare per risolvere un problema che può presentarsi in diverse situazioni durante la progettazione e lo sviluppo del software.
+
+Pattern Architetturali: (progettazione a livello sistema)
+-Architettura “three-tier” (a livelli)
+ Strato della presentazione (GUI)
+ Strato della logica operativa (business logic)
+ Strato dell’organizzazione dei dati (database)
+-Variante multilivello (pila OSI e TCP/IP)
+-Architettura produttore-consumatore
+ Collaborazione a pipeline
+-Architettura cliente-servente
+ Con cliente complesso (“fat client”) Meno carico sul servente ma scarsa portabilità
+ Con cliente semplificato (“thin client”) Maggior carico di comunicazione ma buona portabilità
+-Architettura “peer-to-peer”
+ Interconnessione di scambio senza server intermedio
+
+Progettazione di dettaglio: attività
+-Definizione delle unità realizzative (moduli)
+ Un carico di lavoro realizzabile dal singolo programmatore;
+ Un “sottosistema” definito-> Un componente terminale (non ulteriormente decomponibile) o un loro aggregato;
+ Un insieme di entità (tipi, dati, funzionalità) strettamente correlate -> Raccolti insieme in un package (come un insieme di classi) Nei  sorgenti oppure nel codice oggetto (come in Java).
+-Specifica delle unità come insieme di moduli
+ Definizione delle caratteristiche significative-> Da fissare nella progettazione;
+ Dal nulla o tramite specializzazione di componenti esistenti.
+
+Progettazione di dettaglio: obiettivi
+-Assegnare unità a componenti
+ Per organizzare il lavoro di programmazione;
+ Per assicurare congruenza con l’architettura di sistema.
+-Produrre la documentazione necessaria
+ Perché la programmazione possa procedere in modo certo e disciplinato;
+ Tracciamento per attribuire requisiti alle unità;
+ Per definire le configurazioni ammissibili del sistema.
+-Definire gli strumenti per le prove di unità
+ Casi di prova e componenti ausiliarie per la verifica unitaria e di integrazione.
+
+Documentazione
+IEEE 1016:1998 Software Design Document
+Introduzione (Come nel documento AR, software requirements specification)
+Riferimenti normativi e informativi
+Descrizione della decomposizione architetturale (Moduli, processi, dati)
+Descrizione delle dipendenze (tra moduli, processi, dati)
+Descrizione delle interfacce (tra moduli, processi, dati)
+Descrizione della progettazione di dettaglio
+
+
+SEMAT (Software Engineering Method and Theory) drives a process to refound software engineering based on a solid theory, proven principles and best practices.
+
+Stati di progresso per SEMAT (definiscono possibili milestone)
+-Architecture selected
+ Selezione di una architettura tecnicamente adatta al problema:
+  accordo sui criteri di selezione;
+  Selezione delle tecnologie necessarie;
+  Decisioni su buy, build, make.
+-Demonstrable
+ Dimostrazione delle principali caratteristiche dell’architettura: gli stakeholder concordano;
+ Decisione sulle principali interfacce e configurazioni di sistema.
+-Usable
+ Il sistema è utilizzabile e ha le caratteristiche desiderate;
+ Il sistema può essere operato dagli utenti;
+ Le funzionalità e le prestazioni richieste sono state verificate e validate;
+ La quantità di difetti residui è accettabile.
+-Ready
+ La documentazione per l’utente è pronta;
+ Gli stakeholders hanno accettato il prodotto e vogliono che diventi operativo.
+
+Fine L7 
+*********************************************************************************************
+L10 Qualità del software 
+
+Il concetto di qualità è correlato a quello di valutazione(comparativa o di conformità).
+La valutazione della qualità ha più destinatari, chi fa, chi usa, chi valuta.
+
+Qualità: Insieme delle caratteristiche di un'entità che ne determinano la capacità di soddisfare esigenze espresse e implicite.
+(ISO 8402:1994, glossario dei termini, confluito in ISO 9000:2005)
+
+Sistema qualità: La struttura organizzativa, le responsabilità, le procedure, i procedimenti, e le risorse messe in atto per il perseguimento della qualità. (ISO 8402:1994 → ISO 9000:2005)
+
+Aree di intervento del sistema qualità:
+Intrinseca -> conformità ai requisiti, idoneità all'uso
+Relativa -> soddisfazione del cliente
+Quantitativa -> misura del livello di qualità per controllo
+
+Ambiti del sistema qualità:
+Pianificazione -> definizione di politica e obiettivi
+Controllo
+Miglioramento continuo
+
+Pianificazione di qualità: Le attività del sistema qualità mirate a fissare gli obiettivi di qualità, i processi e le risorse necessarie per conseguirli (ISO 9000).
+Piano di qualità: pianificazione di qualità
+Fissa le politiche aziendali per il perseguimento della qualità (visione orizzontale-trasversalmente sull'intera organizzazione)
+Determina gli obiettivi di qualità del singolo progetto (visione verticale-specificamente per un prodotto/servizio)
+Assume l'uso di opportuno strumenti e modalità di controllo
+
+Controllo di qualità: Le attività del sistema qualità pianificate e attuate al fine che il prodotto soddisfi i requisiti attesi (iso 9000)
+Controllo di qualità - Modalità e ambiti di controllo:
+comprensione e analisi del dominio
+verifica(di attività di  processo)
+validazione(di prodotto)
+quality assurance (preventiva, non correttiva)
+
+Impatto degli standard sulla qualità:
+-Raccolta organica di best practice
+ Per evitare la ripetizione di errori passati
+-Idonea alla concezione e attuazione di processi di quality assurance
+ Chiave del miglioramento continuo
+-Elemento di continuità
+ I nuovi assunti possono comprendere l’organizzazione aziendale a partire dagli standard di qualità in uso
+
+Il lato negativo dell'impatto degli standard:
+-Il personale può percepire gli standard come irrilevanti o bloccanti
+-L’attuazione di standard svincolata da controlli di efficacia sfocia in eccessi di burocrazia
+-Senza il supporto di strumenti informatici possono richiedere frustranti attività manuali
+
+Modelli della qualità SW:
+-Strumenti utili alla valutazione
+ Nella visione dell’utente -> Rispetto all’uso;
+ Nella visione della produzione -> Rispetto a qualifica, manutenzione, portabilità, riuso;
+ Nella visione della direzione -> Rispetto al rapporto costi/benefici.
+-Un solo modello per committenti e fornitori
+ Per uniformare la percezione e la valutazione della qualità.
+-Approccio comune a tutti i modelli
+ Definizione delle caratteristiche rilevanti;
+ Loro organizzazione in una struttura logica.
+-Modello di Boehm
+ 7 caratteristiche principali Suddivise in 15 sotto-caratteristiche misurabili tramite metriche ad-hoc.
+-ISO/IEC 9126:2001
+ Software engineering - Product quality - Part 1: Quality model;
+ 7 caratteristiche principali – 31 sotto-caratteristiche.
+
+L'iceberg della qualità software, la qualità esterna, visibile, è ciò che si osserva tramite esecuzione. E' causata dalla qualità interna. La qualità interna è ciò che deriva da scelte di progettazione, codifica, verifica e che si vede solo tramite revisione critica.
+
+Riferimenti normativi
+-Strumento di definizione e valutazione
+ Definizione: catalogazione sistematica delle caratteristiche rilevanti;
+ Valutazione: definizione di metriche per la loro valutazione.
+-Definizione: modello della qualità SW (ISO/IEC 9126)
+ Visione esterna: relativa all’esecuzione del prodotto (Product requirements);
+ Visione interna: relativa al prodotto non in esecuzione (Product-component requirements);
+ Visione in uso: relativa alla percezione dell’utente/operatore(Customer requirements).
+-Valutazione della qualità SW (ISO/IEC 14598)
+ Misurazione quantitativa: «l’uso di una metrica per assegnare un valore (numeo o categoria) su una scala predefinita»;
+ Meglio: «il processo attraverso cui, secondo regole definite, simboli o numeri sono assegnati ad attributi di una entità»
+ [N.Fenton, Software metrics, a rigorous approach, 1997].
+-ISO/IEC 25000:2005 ha inglobato 9126 e 14598
+ SQuaRE: Software product Quality Requirements and Evaluation 
+ Q requirements → Q model → Q management → Q measurement → Q evaluation.
+sweki[Nel 2005, la famiglia ISO/IEC 25000 ha rimpiazzato gli standard 14598 e 9126, creando così un nuovo progetto più specifico di nome SQuaRE: Systems and software Quality Requirements and Evaluation. Questa famiglia di standard ha lo scopo di creare un framework per la valutazione della qualità del software.]
+
+Software Metrics:
+-Any type of measurement which relates to a software system, process or documentation
+ Program: SLOC. Text: Gunning’s fog index. Effort: person-days.
+ Fog = (average number of words per sentence) + (number of words of 3 syllables or more) ) * 0.4
+-Allow the product and the process to be quantified
+-May be used to predict product attributes or to control the software process
+-Product metrics can be used for general predictions or to identify anomalous components
+
+Metrics Assumpions:
+-A software property or attribute can be measured.
+-A relationship exists between what we can measure and what we want to know
+ We only know how to measure internal attributes;
+ But we are often more interested in external attributes.
+-This relationship has been formalised and validated.
+-It may be difficult to relate what can be measured to desirable external quality attributes.
+
+sweki[
+Una metrica è un modo per dare un significato a dei valori, quindi è l’interpretazione di un sistema di unità di misura. Una misurazione quantitativa è l’uso di una metrica per assegnare un valore su una scala predefinita.
+Le metriche software permettono di quantificare sia un prodotto (e quindi predire i suoi attributi) sia un processo (al fine di monitorarlo e migliorarlo).
+L’uso di una metrica assume che:
+• Si può misurare un certo attributo (o proprietà) del software.
+• Esiste una relazione tra ciò che possiamo misurare e ciò che vogliamo sapere.
+Ad esempio, generalmente è possibile misurare solo attributi interni del software, mentre ciò che più spesso ci interessa sono i suoi attributi esterni : per capire il grado di manutenibilità di un software (attributo esterno), dobbiamo conoscere il numero di righe di codice, il numero di parametri per procedura, l’ampiezza del manuale utente... (attributi interni).
+• La suddetta relazione è stata formalizzata e validata.
+La selezione delle metriche (e la scelta dei criteri di accettazione) parte dall’analisi dei requisiti di qualità e dei vincoli di costo. Dopodiché:
+1. una volta selezionate le metriche, si può procedere alla misurazione;
+2. poi si passa alla valutazione (che è una verifica quantificata);
+3. e infine viene l’accettazione — basandosi, appunto, sui criteri di accettazione scelti.
+]
+
+Qualità nel ciclo di vita:
+-Qualità obiettivo(responsabilità del committente)-> soddisfacimento dei requisiti, misura di qualità parzialmente implicita.
+-Qualità richiesta(responsabilità del committente e del fornitore)-> sancita contrattualmente, misura di qualità esplicita.
+-Qualità progettata(responsabilità del fornitore).
+-Qualità stimata(responsabilità del fornitore).
+-Qualità consegnata(responsabilità del fornitore).
+
+Fine L10
+
+******************************************************************
+L11 Qualità di processo
+
+Qualità del processo come esigenza: organizzazione e diffusione interna sistematica; identificazione di prodotti intermedi e di momenti di verifica; riproducibilità dei risultati; quality assurance(non solo sistematica ma sempre più proattiva(preventiva)).
+Disposizione al miglioramento.
+
+Definire il processo: per controllarlo e renderlo più facilmente controllabile; per raccontarlo in maniera più convincente.
+Controllare il processo per migliorarlo: 
+efficacia -> prodotti conformi alle attese;
+efficienza -> minori costi a pari qualità di prodotto;
+esperienza -> apprendere dall'esperienza(anche dagli altri).
+Usare buoni strumenti di valutazione.
+
+Le Norme ISO 9000
+Certificaziioni iso 9001 nascono nella metà degli anni 90 per l avalutaione dei fornitori di prodotti o servizi. La famiglia delle norme comprende: 
+-iso 9000:2005 Fondamenti e Glossario -> che è radice di modelli di qualità neutri rispetto al dominio di applicazione.
+-iso 9001:2000 Sistema di Gestione Qualità SGQ - requisiti-> con cui la visione iso 9000 è calata nei sistemi produttivi.
+-iso 9000-3:1997  Quality management and quality assurance standards – Part 3: Guidelines for the application of ISO 9001:1994 to the development, supply, installation and maintenance of computer software, nel 2004 rimpiazzato da
+-ISO 90003:2004 : Software engineering – Guidelines for the application of ISO 9001:2000 to computer software
+-ISO 9004:2000 : Guida al miglioramento dei risultati
+
+I processi secondo iso9000
+Quattro categorie di processi:
+Responsabilità della direzione (5.) processi di decisione e controllo
+Gestione delle risorse (6.) processi di decisione e controllo
+Realizzazione del prodotto (7.) processi di produzione
+Misura, analisi e miglioramento (8.) processi di produzione
+
+SGQ come funzione aziendale. Responsabilità SGQ sono: garantire qualità trasversalmente a settori e reparti, riferire direttamente alla direzione.
+
+Manuale della qualità
+Il documento che definisce il sistema di gestione della qualità di un’organizzazione (ISO 9000).  Visione operativa (orizzontale).
+Visione ad alto livello:
+Si integra con le procedure aziendali;
+Fissa gli obiettivi di qualità e le strategie attuative(esprime la politica aziendale rispetto alla qualità);
+Specifica le modalità per la sua evoluzione.
+
+Piano della Qualità (PdQ)
+Il documento che definisce gli elementi del SGQ(sistema gestione qualità) e le risorse che devono essere applicate in uno specifico caso (prodotto, processo, progetto) (ISO 9000).
+Taglio operativo:
+Concretizza il Manuale della Qualità a livello di progetto, dunque sotto specifici vincoli di TEMPO e di RISORSE;
+Può avere valenza contrattuale, nel progetto didattico è integrato nel Piano di Qualifica.
+
+Il PdQ in pratica
+Accertare disponibilità di: Analisi dei requisiti, Architettura e soluzioni tecniche, Pianificazione delle verifiche, Risultati delle verifiche.
+Conformità ai modelli fissati nelle norme.
+Accertare tracciabilità tra soluzioni e requisiti.
+Assicurare la buona pianificazione delle attività (per uso di risorse).
+
+Ramo discendente pianificazione, mettere in moto per fare cose quando viene il momento, premesse. 
+Pianificazione ha a che fare con la strategia, come raggiungere gli obiettivi, il pdq ha obiettivo di massima conformità misurata tramite la qualità, qualità dei processi e del prodotto che realizziamo. Efficacia, obiettivi di qualità misurabili. 
+Obiettivo dell'efficacia= conformità, ovvero qualità del prodotto e dei processi. Quali sono gli obiettivi, tenere conto di come li sto raggiungendo(verifica).
+Il pdq comincia enunciando obiettivi di qualità in modo QUANTITATIVO. Obiettivo e punteggi minimi.
+Il PdQ risponde alla domanda "quali e quante prove".
+Le metriche e le loro tecniche di misurazione vanno nelle norme (che cosa misuro e come lo misuro). Il pdq contine gli obiettivi metrici. La prima parte contiene l'enunciazione degli obiettivi.
+Il piano di progetto ha come obiettivo l'uso ottimo delle risorse=massima efficienza misurata con consuntivo di periodo e consuntivo finale.
+Non tutti i processi hanno obiettivi di qualità perchè alcuni usati troppo poco. Si utilizzano metriche proattive non reattive.
+Quando verifichiamo? il pdq riceve risorse dal pdp, coerenti non ridondanti.
+La seconda parte enuncia cosa si verifica e quando rimandando al pdp per i dettagli. Il preventivo a finire si può modificare in base al consuntivo di periodo.
+La seconda parte espone rendiconto ed esiti. Resoconto dei punti di verifica (revisioni interne, revisioni di progresso, ecc) fondamentalmente è un appendice. Copertura dei requisiti(progettazione, codice, implementazione, valudazione), altre metriche di copertura(test). Vedere se sono stati raggiunti gli obiettivi di qualità.
+La seconda parte: Ramo ascendente si fa ciò che si è pianificato, fatte le cose -> resoconti, risultati, criticità.
+
+
+Strumenti di valutazione
+
+1) SPY-SW Process Assessment and Improvement
+valutazione oggettiva dei processi di una organizzazione per darne un giudizio di maturità e individuare azioni migliorative.
+
+2) CMM capability maturity model 1987 -> CMMI
+
+Il passo successivo: CMMI
+CAPABILITY: misura di quanto è adeguato un processo per gli scopi per cui è stato definito.
+Caratteristica di un processo considerato singolarmente!!
+Determina l’intorno del risultato (di efficienza ed efficacia) raggiungibile utilizzando quel processo.
+
+Un processo a basso livello di capability: Dipende da chi lo attua; Viene definito e seguito in modo opportunistico; Rende difficile prevederne l’esito, l’avanzamento e la qualità; Porta a compromessi tra funzionalità e qualità.
+
+Un processo ad alto livello di capability è seguito da tutti in modo disciplinato, sistematico e quantificabile.
+
+
+L’intelligenza dei processi di una organizzazione si chiama «governance».
+Efficacia, efficienza, manutenzione, visione.
+
+MATURITY: misura di quanto è governato il sistema dei processi dell’azienda.
+Caratteristica di un insieme di processi.
+I processi significativi sono quelli che rispondono alle esigenze di miglioramento continuo dell’organizzazione. 
+Risulta dall’effetto combinato delle capability dei processi coinvolti.
+
+I cinque livelli di maturità sono:
+1'INITIAL process unpredictable, poorly controlled and reactive.
+2'MANAGED process characterized for projects and often reactive(Do).
+3'DEFINED process characterized for the organization and is proactive(Plan Do)
+4'QUANTITATIVELY MANAGED Process measured and controlled (Plan Check Do)
+5'OPTIMIZING focus on process improvement (PDCA)
+
+MODEL: insieme di requisiti via via più stringenti per valutare il percorso di miglioramento dei processi dell’azienda, utile anche a confrontare tra loro aziende diverse.
+
+INTEGRATION: architettura di integrazione delle diverse discipline (system, HW, SW) e tipologie di attività delle aziende.
+Sviluppo di prodotti e servizi (CMMI-DEV).
+Gestione ed erogazione di servizi (CMMI-SVC).
+Approvvigionamento di prodotti e servizi (CMMI-ACQ).
+
+
+3) SPICE e iso/iec 15504
+Software Process Improvement Capability dEtermination, nato nel 1992 per armonizzare SPY con ISO/IEC 12207 e iso9001, poi confluito in iso/iec tr 15504:1998. 15504 livelli e attributi:
+
+(dal pdq)
+0-incomplete - le performance del processo, come i suoi risultati, sono incompleti.
+
+1 performed - i processi sono eseguiti intuitivamente per raggiungere dei risultati,
+process performance: gli obiettivi sono raggiunti trasformando input identificabili in output identificabili.
+
+2 managed - i processi e i prodotti dei processi sono gestiti e le responsabilità sono definite,
+performance management-> il prodotto è coerente con gli obiettivi fissati;
+work product management-> il prodotto è documentato, controllato e verificato.
+
+3 established - il processo è definito o estrapolato da uno standard,
+process definition-> l’esecuzione del processo si basa su standard;
+process deployment-> il processo usufruisce delle risorse in modo efficace.
+
+4 predictable - sono definite metriche per le performance di processo e per i risultati prodotti,
+process measurement-> vengono utilizzate le misure, le metriche e gli obiettivi per garantire il raggiungimento dei traguardi;
+process control-> vengono utilizzate misure e metriche per controllare processi e prodotti, al fine di effettuare correzioni migliorative.
+
+5 optimizing - misure quantitative sono utilizzate per l’analisi di performance di processo e dei suoi risultati per attuarne il continuo miglioramento,
+process innovation-> applicazione di approcci innovativi;
+process optimization-> ottimizzazione controllata e misurata di processo.
+
+evaluation da 0 a 5 e tutti i livelli 15504 possono essere 
+not implemented, partially implemented, largely implemented, fully implemneted.
+
+Metodologia di valutazione 15504
+-Identificazione dei portatori d’interesse
+ Destinatari dei risultati
+ Responsabili dei processi valutati
+ Responsabili delle attività di valutazione
+-Scelta tra valutazione e miglioramento
+ Risultato a uso esterno o interno
+ Valutazione formale o meno (self-assessment)
+-Definizione della portata
+ Processi inclusi nella valutazione
+ Indicatori di valutazione
+
+fine L11
+**************************************************************
+
+L12 Verifica e Validazione
+
+Software Verification
+Provides objective evidence that the design outputs of a particular phase of the software development life cycle meet all of the specified requirements for that phase.
+Software verification looks for consistency, completeness, and correctness of the software and its supporting documentation, as it
+is being developed, and provides support for a subsequent conclusion that software is validated.
+La verifica si  occupa di accertare che l'esecuzione delle attività di processi svolti nella fase in esame non abbia introdotto errori nel prodotto.
+
+Software Validation
+Confirmation by examination and provision of objective evidence that the software specifications conform to user needs and intended uses, and that the particular requirements implemented through software can be consistently fulfilled.
+La validazione si occupa di accertare che il prodotto realizzato sia conforme alle attese.
+
+Forme di Verifica
+
+Analisi Statica
+Non richiede esecuzione del prodotto SW in alcuna sua parte(essenziale quando il sistema non è ancora completamente disponibile).
+Studia caratteristiche del codice sorgente, talvolta anche del codice oggetto, e della documentazione associata(conformità a regole date, assenza di difetti, presenza di proprietà positive).
+
+Analisi Dinamica
+Richiede esecuzione del programma, viene effettuata tramite prove(test). Usata sia nella verifica che nella validazione.
+
+as = analisi statica
+AD = analisi dinamica
+
+capitolato <-(as)- AnReq <-(as)- ProgLogica <-(as)- ProgDettaglio 
+AD
+collaudo(as) <-test stema(as) <-test integrazione(as) <-test unità(as)
+
+Analisi dinamica: ambiente di prova
+La ripetibilità è requisito essenziale:
+-Ambiente (HW, stato iniziale, …)
+-Specifica (ingressi richiesti, comportamenti attesi)
+-Procedure (esecuzione, analisi dei risultati)
+Strumenti:
+-Driver componente attiva fittizia per pilotare il test
+-Stub componente passiva fittizia per simulare una parte del sistema ma non oggetto di test
+-Logger componente non intrusivo di registrazione dei dati di esecuzione per analisi dei risultati
+
+Analisi dinamica: definizioni
+Unità:
+La più piccola quantità di SW che conviene verificare da sola.
+Tipicamente prodotta da un singolo programmatore.
+La sua natura specifica dipende dal linguaggio di programmazione in uso, 
+Va sempre intesa in senso architetturale, Non linee di codice ma entità di strutturazione (procedura, classe, package).
+Il «modulo» è parte dell’unità. Il «componente» integra più unità.
+
+Test di unità
+-Attività di analisi dinamica:
+Con il supporto di attività mirate di analisi statica,
+Per determinare limiti di iterazioni, flusso di programma, valori di variabili, ecc.
+Si svolge con il massimo grado di parallelismo.
+-Responsabilità:
+Dello stesso programmatore per le unità più semplici,
+Di un verificatore indipendente (meglio un automa) altrimenti.
+-Obiettivi:
+Verificare la correttezza del codice «as implemented».
+
+Test di integrazione
+-Per la costruzione e la verifica incrementale del sistema:
+Componenti sviluppati in parallelo e verificati incrementalmente,
+In condizioni ottimali l’integrazione è priva di problemi.
+-Quali problemi rileva:
+Errori residui nella realizzazione dei componenti,
+Modifica delle interfacce o cambiamenti nei requisiti,
+Riuso di componenti dal comportamento oscuro o inadatto,
+Integrazione con altre applicazioni non ben conosciute.
+
+Test di sistema e collaudo
+-Validazione:
+Test di sistema come attività interna del fornitore (Per accertare la copertura dei requisiti SW).
+Collaudo come attività supervisionata dal committente (Per dimonstrazione di conformità del prodotto sulla base di casi di prova) specificati nel o implicati dal contratto.
+-Implicazioni contrattuali:
+Il collaudo è attività formale. Al collaudo segue il rilascio del prodotto (con eventuale garanzia) e la fine della commessa (con eventuale
+manutenzione).
+
+Test di regressione
+L’insieme di test (TUnità, TIntegrazione) necessari ad accertare che la modifica di una parte P di S non causi errori in P o nelle altri parti di S che hanno relazioni con P (Ripetizione di test già previsti ed effettuati per ogni parte coinvolta).
+Modifiche effettuate per aggiunta, correzione o rimozione, non devono pregiudicare le funzionalità già verificate (Il rischio aumenta all’aumentare dell’accoppiamento e al diminuire dell’incapsulazione(information hiding)).
+
+
+Forme di analisi statica
+Non richiedono esecuzione di parti del sistema SW.
+Si Applicano a ogni PRODOTTO di processo (non solo SW) (Per tutti i processi attivati nel progetto).
+Metodi di lettura (desk check) (Impiegati solo per prodotti semplici).
+Metodi formali, basati sulla prova assistita di proprietà (La cui dimostrazione dinamica può essere eccessivamente onerosa).
+Metodi formali, verifica di equivalenza o generazione automatica.
+
+Metodi di lettura
+-Inspection e Walkthrough
+-Metodi pratici
+Basati sulla lettura della documentazione sul prodotto. Di efficacia dipendente dall’esperienza dei verificatori nell’organizzare le attività di verifica e nel documentare le attività svolte e i risultati ottenuti.
+-Modalità relativamente complementari
+
+Inspection
+-Obiettivi
+Rivelare la presenza di difetti.
+Eseguire una lettura mirata [del prodotto in esame].
+-Agenti
+Verificatori distinti e separati dai programmatori.
+-Strategia
+Focalizzare la ricerca su presupposti.
+Error guessing.
+
+[l'inspection esegue una lettura mirata del prodotto in esame, focalizza la ricerca sugli errori noti, più probabili, può generare falsi negativi ma è molto più rapido del walkthrough]
+
+Attività di inspection
+Fase 1: pianificazione
+Fase 2: definizione della lista di controllo
+Fase 3: lettura
+Fase 4: correzione dei difetti
+In ogni fase->Documentazione come rapporto delle attività svolte
+
+Walkthrough
+-Obiettivo
+Rivelare la presenza di difetti
+Eseguire una lettura critica [del prodotto in esame] a largo spettro e senza l’assunzione di presupposti
+-Agenti
+Gruppi misti ispettori/sviluppatori ma con ruoli ben distinti
+-Strategia (per il codice)
+Percorrerlo simulandone possibili esecuzioni
+
+[il walkthrough esegue una lettura critica del prodotto in esame, è una lettura a largo spettro, senza l'assunzione di presupposti, può generare falsi positivi, tipologia molto costosa, che rischia di essere soggettiva]
+
+Attività di walkthrough
+Fase 1: pianificazione
+Fase 2: lettura
+Fase 3: discussione
+Fase 4: correzione dei difetti
+In ogni fase->Documentazione come rapporto delle attività svolte
+
+Inspection contro walkthrough
+-Affinità
+ Controlli basati su desk check
+ Programmatori e verificatori su fronti opposti
+ Documentazione formale
+-Differenze
+ Inspection basato su (errori) presupposti
+ Walkthrough richiede maggiore attenzione
+ Walkthrough più collaborativo
+ Inspection più rapido
+
+Attività di quality assurance
+-Serve a raccogliere evidenza oggettiva e di qualità tempestivamente
+ A fronte di specifiche metriche e di obiettivi definiti
+ Per dare evidenza oggettiva
+ Per controllo (interno) e accertamento (esterno)
+-ISO/IEC 9126 come riferimento
+ "Quali strumenti per quali caratteristiche?"
+ La qualità in uso è valutata a posteriori
+
+Qualità interna: qualità della progettazione del codice sorgente.
+Qualità Esterna: qualità in fase di test ed esecuzione.
+7• Qualità in uso qualità per il prodotto finale quali efficacia, produttività, soddisfazione, sicurezza, di cui si avrà esperienza nella fase di utilizzo del prodotto.
+
+Qualità esterna e qualità interna si suddividono ulteriormente nelle seguenti categorie di carat-
+teristiche:
+
+1• Funzionalità: soddisfacimento delle esigenze prestabilite attraverso:
+– conformità: adesione del prodotto a standard e convenzioni di funzionalità;
+– appropriatezza: il prodotto offre funzionalità appropriate al soddisfacimento delle esigenze;
+– accuratezza: il prodotto produce esiti congrui alle aspettative;
+– interoperabilità: il software si integra correttamente nel sistema;
+– sicurezza: il prodotto è robusto rispetto alle minacce esterne, non offre vulnerabilità.
+
+2• Affidabilità: assicurare prestazioni nelle diverse circostanze. Comprende:
+– tolleranza agli errori: il prodotto mantiene la consistenza interna rispetto alle modifiche autorizzate e ai malfunzionamenti;
+– maturità: il prodotto è predisposto a non causare errori o produrre esiti non corretti;
+– aderenza: il prodotto è predisposto ad aderire agli standard e alle convenzioni;
+– recuperabilità: a seguito di malfunzionamenti il prodotto è capace di riabilitare le prestazioni e ricostruire i dati colpiti da errori.
+
+3• Efficienza: impiego di risorse ragionevoli nell’esecuzione delle sue attività. Include:
+– conformità: adesione del prodotto a standard e convenzioni di efficienza;
+– utilizzo delle risorse: congruo utilizzo delle risorse da parte del prodotto per il raggiungimento degli scopi prefissati;
+– comportamento rispetto al tempo: il software produce risultati in un opportuno lasso di tempo.
+
+4• Usabilità: grado di adoperabilità del prodotto, secondo:
+– conformità: adesione del prodotto a standard e convenzioni di usabilità;
+– comprensibilità: il prodotto è autoesplicativo o di facile utilizzo;
+– apprendibilità: in che misura il prodotto richiede l’apprendimento di concetti per il suo utilizzo;
+– operabilità: il prodotto richiede un certo grado di approntamenti per l’utilizzo;
+– attrattiva: il prodotto genera una certa spinta al suo utilizzo.
+
+5• Manutenibilità: predisposizione alla correzione, all’adattamento e all’evoluzione. Ne fanno parte:
+– analizzabilità: il prodotto può essere ispezionato;
+– modificabilità: il prodotto può essere modificato;
+– stabilità: il prodotto è resiliente alle modifiche;
+– testabilità: il prodotto può essere testato.
+
+6• Portabilità: il prodotto mantiene le sue proprietà in qualsiasi sistema sia eseguito. Implica:
+– conformità: adesione del prodotto a standard e convenzioni di portabilità;
+– installabilità: il prodotto è disponibile in vari ambienti;
+– adattabilità: il prodotto non richiede modifiche per il funzionamento in diversi ambienti;
+– sostituibilità: il prodotto utilizzato come alternativa ad un altro produce gli stessi risultati.
+
+************************************
+L13 Verifica e validazione: Analisi Statica
+
+-Un SW di buona qualità deve possedere:
+Tutte le capacità funzionali specificate nei requisiti, che determinano cosa il sistema debba fare;
+Tutte le caratteristiche non funzionali necessarie per garantire che il sistema lavori sempre come previsto.
+-Ciò richiede il possesso verificato di determinate proprietà:
+Di costruzione (architettura, codifica, integrazione); D’uso; Di funzionamento.
+
+Nessun linguaggio di programmazione garantisce a priori la completa verificabilità di ogni programma scritto in esso perciò occorre cercare buon bilanciamento tra funzionalità (potere espressivo) e integrità (costo di verifica).
+Fissato il linguaggio di programmazione, occorre sceglierne i costrutti in funzione del loro impatto (Potere espressivo/costo di verifica).
+
+Programmi verificabili: 
+
+Serve adottare uno standard di codifica e un sottoinsieme di linguaggio consapevoli delle esigenze di verifica (L’uso di costrutti del linguaggio inadatti può compromettere la verificabilità del programma).
+La verifica solo retrospettiva (a valle dello sviluppo) è sovente inadeguata. Il costo di rilevazione e correzione di un errore è tanto maggiore quanto più avanzato è lo stadio di sviluppo.
+
+Posticipare la verifica in modalità as-lateas-possible. Approccio retrospettivo -> correctness by correction.
+Accompagnare la produzione con la verifica. Approccio costruttivo -> correctness by construction.
+
+Regolamentare l’uso del linguaggio di programmazione tramite regole da riflettere nelle Norme di Progetto:
+Per assicurare comportamento predicibile. Per usare solidi e collaudati criteri di programmazione. Per ragioni pragmatiche.
+
+Comportamento predicibile:
+Codice sorgente senza ambiguità
+-Effetti laterali (p.es. di funzioni)
+Diverse invocazioni della stessa funzione producono risultati diversi.
+-Ordine di elaborazione e inizializzazione
+L’esito di un programma dipende dall’ordine di elaborazione entro e tra unità. Per esempio, l’attivazione dei thread in Java è fonte di impredicibilità.
+-Modalità di passaggio dei parametri. La scelta di una modalità di passaggio (per valore, per riferimento) può influenzare l’esito dell’esecuzione.
+
+Criteri di programmazione:
+-Riflettere l’architettura nel codice
+Programmazione strutturata per esprimere componenti, moduli, unità come da progettazione, e facilitare il riuso.
+-Separare le interfacce dall’implementazione
+Fissare bene le interfacce già a partire dall’architettura logica.
+-Massimizzare l’incapsulazione (information hiding)
+Usare membri privati e metodi pubblici per l’accesso.
+-Usare tipi specializzati per specificare dati
+La composizione e la specializzazione aumentano il potere espressivo del sistema di tipi del programma.
+
+Considerazioni pragmatiche:
+-L’efficacia dei metodi di analisi è funzione della qualità di strutturazione del codice
+Esempio: un modulo con un solo punto di ingresso (pre-) e un solo punto di uscita (post-) è più facilmente analizzabile per il suo effetto sullo stato
+-La verifica di un programma relaziona frammenti di codice con frammenti di specifica
+La verificabilità è funzione inversa della dimensione del contesto (Conviene confinare gli ambiti (scope) e la visibilità);
+Una buona architettura facilita la verifica, Esempio: incapsulazione dello stato e controllo di accesso.
+
+Tracciamento
+Tracciamento per dimostrare completezza ed economicità della soluzione, cioè il Soddisfacimento di tutti i requisiti, nessuna funzionalità superflua, nessun componente ingiustificato.
+Il tracciamento ha luogo su ogni passaggio dello sviluppo (ramo discendente) e su ogni ramo della verifica (ramo ascendente).
+Il tracciamento può essere totalmente automatizzato.
+
+capitolato <--(tracciamento)-- AR <--(tracciamento)-- ProgLogica <--(tracciamento)-- ProgDettaglio 
+\^tracciamento\^
+collaudo <- test sistema <- test integrazione <- test unità
+
+Particolari stili di programmazione facilitano il tracciamento
+Assegnare singoli requisiti elementari a singoli moduli del programma richiede una sola procedura di prova e rende più chiara e semplice la corrispondenza tra essi.
+Maggiore l’astrazione (potenza espressiva) di un costrutto del linguaggio maggiore è la quantità di codice oggetto eseguito per esso e maggiore l’onere di dimostrazione di corrispondenza
+Bassa astrazione: addizione tra interi,
+Alta astrazione: attivazione di un thread.
+
+10 tipi di analisi statica
+
+1) Analisi di flusso di controllo
+Accertare che il codice esegua nella sequenza specificata.
+Accertare che il codice sia ben strutturato.
+Localizzare codice non raggiungibile.
+Identificazionne dei segmenti d'esecuzione che possano non terminare: divieto di modifica di variabili di controllo delle iterazioni;
+e l’analisi dell’albero delle chiamate (call-tree analysis) mostra se l’ordine di chiamata corrisponda alla specifica e rileva la presenza di ricorsione diretta o indiretta.
+
+2) Analisi di flusso dei dati
+Accertare che nessun cammino d’esecuzione del programma acceda a variabili prive di valore, usa i risultati dell’analisi di flusso di controllo insieme alle informazioni sulle modalità di accesso alle variabili (lettura, scrittura).
+Rilevare possibili anomalie per Esempio: più scritture successive senza letture intermedie.
+Attività complicata dalla presenza e dall’uso di dati globali raggiungibili da ogni parte del programma.
+
+3) Analisi di flusso d'informazione
+Determinare quali dipendenze tra ingressi e uscite risultino dall'esecuzione di una unità di codice.
+Le solo dipendenze consentite sono quelle previste dalla specifica(consente l'identificazione di effetti  laterali inattesi o indesiderati).
+Può limitarsi a un singolo modulo oppure estendere a più moduli correlati oppure anche all'intero sistema.
+
+4) Esecuzione simbolica
+Verificare proprietà del programma mediante manipolazione algebrica del codice sorgente (combinando tecniche di analisi di flusso di controllo, di flusso di dati e di flusso di informazione).
+Si esegue effettuanzdo "sostituzioni inverse" (sostotuendo a ogni LHS di un assegmaneto il suo RHS).
+Trasformando così il flusso sequenziale del programma in un insieme di assegmaneti paralleli le cui uscite sono funzione degli ingressi.
+
+5) Verifica formale del codice
+Provare la correttezza del codice sorgente rispetto alla specifica algebrica dei requisiti(esplorando tutte le esecuzioni possibili, non fattibile tramite analisi dinamica).
+Correttezza parziale-> le condizioni di verifica sono espresse come teoremi la cui verità implica certe precondizioni in ingresso e certe postcondizioni in uscita, la prova di correttezza vale sotto l'ipotesi di terminazione del programma, la prova di correttezza totale richiede prova di terminazione.
+
+6) Analisi di limite
+Verificare che i dati del programma restino entro i limiti del loro tipo e della precisione desiderata quindi:
+ Analisi di overflow e underflow
+ Analisi di errori di arrotondamento
+ Rispetto dei limiti (range checking)
+ Analisi di limite di strutture.
+Linguaggi evoluti assegnano limiti statici a tipi discreti consentendo verifiche automatiche sulle corrispondenti variabili (Più problematico con tipi enumerati e reali).
+
+7) Analisi d'uso di stack
+Lo stack è l’area di memoria che i sottoprogrammi usano per immagazzinare dati locali, temporanei e indirizzi di ritorno generati dal compilatore: ogni flusso di controllo (thread) ha un suo proprio stack; l’ampiezza dello stack cresce con l’annidamento di chiamate di procedura.
+Determinare la massima domanda di stack richiesta da un’esecuzione in relazione con la dimensione dell’area di memoria assegnata al processo.
+Verificare che non vi possa essere collisione tra stack e heap per qualche esecuzione.
+L’heap invece è l’area di memoria globale, l’ampiezza dell’heap è fissata a configurazione e poi consumata con la creazione dinamica di oggetti.
+
+8) Analisi temporale
+Studiare le proprietà temporali richieste ed esibite dalle dipendenze delle uscite dagli ingressi del programma (Sapere di produrre il valore giusto al momento giusto).
+Limiti espressivi dei linguaggi e delle tecniche di programmazione complicano questa analisi (Iterazioni prive di limite statico (while), ricorso sistematico a strutture dati dinamiche (new), ecc).
+
+9) Analisi d'interferenza
+Mostrare l’assenza di effetti di interferenza tra parti separate (“partizioni”) del sistema (non necessariamente limitate a componenti software).
+Veicoli tipici di interferenza sono Memoria dinamica (heap) condivisa, dove parti separate di programma lasciano traccia di dati abbandonati ma non distrutti (memory leak), l'azzeramento preventivo delle pagine di memoria riutilizzate (p.es. NT v5.x), l' I/O e altri dispositivi programmabili con effetti a livello sistema (esempio: watchdog).
+
+10) Analisi di codice oggetto
+Assicurareche il codice oggetto da eseguire sia una traduzione corretta del codice sorgente corrispondente e che nessun errore od omissione siano stati introdotti dal compilatore, viene ancora effettuata manualmente, viene facilitata dalle informazioni di corrispondenza prodotte dal compilatore.
+
+
+Analizzabilità del sistema:
+L’analisi statica costruisce modelli astratti del SW in esame.
+Questi modelli rappresentano ogni programma come un grafo diretto e ne studiano i cammini possibili.
+Le transizioni tra stati (archi) hanno etichette che descrivono proprietà sintattiche o semantiche dell’istruzione corrispondente.
+La presenza di flussi di eccezione e di risoluzione dinamica di chiamata (dispatching) complica notevolmente la struttura del grafo.
+Ciascun flusso di controllo (thread) viene rappresentato e analizzato separatamente assumendo non-interferenza!
+
+**************************************
+L14 Verifica e validazione: Analisi Dinamica
+
+Analisi dinamica = test (prova), attività che comporta esecuzione dell’oggetto di verifica.
+Verifica dinamica del comportamento del programma su un insieme finito di casi, selezionati nel dominio (in generale, infinito) di tutte le esecuzioni possibili. Ciascun caso di prova specifica i valori di ingresso e lo stato iniziale del sistema.
+Ciascun caso di prova deve produrre un esito decidibile (oracolo) verificato rispetto a un comportamento atteso.
+
+E' Parte essenziale del processo di verifica. Produce una misura della qualità del sistema, aumenta il valore di qualità del sistema identificandone e rimuovendone difetti.
+Il suo inizio non deve essere differito al termine delle attività di codifica.  Le sue esigenze devono essere tenute in conto nella progettazione del sistema.
+
+Oggetto delle prove sono Unità, aggregati, sistema completo.
+
+Fault(Guasto/difetto)->Error(errore)->failure(malfunzionalmento)
+
+A FAILURE(malfunzionamento) occurs when the behavior of a system deviates from what is specified for it.  Failures result from "problems" internal to the system which eventually manifest in the system's external behavior.
+
+These "problems" are called ERRORS and their mechanical or algorithmic or conceptual cause are termed(definiti) faults(guasto/difetto), Errors are states of the system, Faults(difetti/guasti) are what causes the error to exist.
+Systems are hierarchical compositions of components which are themselves systems.
+
+-Obiettivo delle prove
+Accettazione, qualifica, conformità, regressione
+Installazione nell’ambiente di prova, controllo prestazioni
+-Vincoli di progetto
+Processi, prodotti, risorse, competenze
+Stima e controllo dei costi, criteri di terminazione
+-Attività di prova
+Pianificazione, specifica e sviluppo dei casi di prova
+Esecuzione, valutazione, trattamento dei problemi
+
+La strategia di prova richiede di bilanciare la quantità minima di casi di prova sufficienti a fornire certezza adeguate sulla qualità del prodotto (Fattore governato da criteri tecnici).
+La quantità massima di sforzo, tempo e risorse disponibile per la verifica è un fattore governato da criteri gestionali.
+Legge del rendimento decrescente -> Diminishing returns
+
+Oggetto della prova:
+Il sistema nel suo complesso (Test Sistema). 
+Parti di esso, in relazione funzionale, d’uso, di comportamento, di struttura (Test Integrazione). 
+Singole unità (Test Unità).
+Obiettivo della prova:
+Specificato per ogni caso di prova .In termini precisi e quantitativi
+Varia al variare dell’oggetto della prova. Il PdQ risponde alla domanda "quali e quante prove".
+
+La “provabilità” del SW va assicurata a monte dello sviluppo, non a valle della codifica. Progettazione architetturale e di dettaglio raffinate per assicurare provabilità. La complessità è nemica della provabilità.
+
+Una singola prova non basta, i risultati valgono solo per quella esecuzione e non possono essere generalizzati, la prova deve essere ripetibile.
+(Rileva malfunzionamenti indicando la presenza di guasti, in generale non può provarne l’assenza).
+Le prove sono costose, richiedono molte risorse (tempo, persone, infrastrutture), necessitano di un processo definito, richiedono attività di ricerca, analisi, correzione.
+
+Attività di prova: specifica-> codifica-> compilazione-> esecuzione-> analisi.
+
+Elementi di una prova
+Caso di prova (test case) è una Tripla <ingresso, uscita, ambiente>
+(L’ambiente include l’oggetto della prova)
+Una Batteria di prove (test suite) è un Insieme (sequenza) di casi di prova.
+Una Procedura di prova è Il procedimento (automatico o manuale) per eseguire, registrare, analizzare e valutare i risultati di prove.
+Prova = <Procedura, Batteria di prove>
+
+[p17 oracolo] riassunto [L’oracolo : un metodo per generare a priori i risultati attesi.]
+[Analisi Dinamica Ciascun caso di prova deve produrre un esito decidibile (oracolo) verificato rispetto a un comportamento atteso.]
+
+Unità software composta da uno o più moduli, Modulo = componente elementare di progetto di dettaglio (quindi non necessita di test di unità).
+Unità e moduli sono determinati in progettazione di dettaglio e quindi anche il piano di TU. La TU completa quando ha verificato tutte le unità.
+(~2/3 dei difetti identificati tramite analisi dinamica vengono rilevati in TU, 50% di essi viene identificato da prove strutturali(white-box)).
+
+Per ogni test di unità si definiscono: Oggetto, strategia, risorse necessarie, piano di esecuzione.
+Si ha Statement Coverage al 100% quando i test effettuati sull’unità sono sufficienti a eseguire – complessivamente – almeno una volta tutte le linee di comando di ciascuno dei moduli dell’unità.
+Si ha Branch Coverage al 100% quando ciascun ramo del flusso di controllo viene attraversato – complessivamente – almeno una volta.
+Lo statement coverage è meno potente del branch coverage.
+
+Copertura 
+Definizione (DO-178B)
+Condizione= Espressione booleana semplice non contenente al suo interno ulteriori condizioni combinate da operatori booleani.
+Decisione= Espressione composta contenente condizioni combinate da operatori booleani.
+Al crescere del numero di condizioni all’interno di una decisione il numero di test necessario a massimizzare il condition coverage diventa proibitivo.
+DO-178B richiede allora di massimizzare il modified decision condition coverage, MCDC implica branch coverage.
+Requisiti DO-178B (software di avionica) richiede che tutte le decisioni siano soggette a test e tutti i loro possibili esiti siano effettivamente prodotti, che ciascuna condizione all’interno di una decisione assuma entrambi gli esiti (vero/falso) almeno una volta.
+Occorre allora verificare se e come ogni singola condizione possa da sola determinare tutti gli esiti possibili della decisione e non basta più provare l’intera decisione come vera o falsa!
+
+Test di Unità: Test funzionale (black-box)
+Da solo non può accertare correttezza e completezza della logica interna dell’unità (Va necessariamente integrato con test strutturale).
+Fa riferimento alla specifica dell’unità e utilizza dati di ingresso capaci di provocare l’esito atteso.
+Ciascun insieme di dati di ingresso che producono un dato comportamento funzionale costituisce un caso di prova.
+Classi di equivalenza invece che infiniti valori di ingresso (Valori nella medesima classe producono lo stesso comportamento).
+
+Test di Unità: Test strutturale (white-box)
+Verifica la logica interna del codice dell’unità cercando massima copertura.
+Ciascuna prova deve essere progettata per attivare ogni cammino di esecuzione all’interno del modulo.
+Ciascun insieme di dati di ingresso che attivano un percorso costituiscono un caso di prova.
+L’uso di debugger può agevolarne l’esecuzione ma non esonera dalla progettazione dei casi di prova.
+
+Strategie di integrazione
+Assemblare parti in modo incrementale aggiungendo solo a insiemi ben verificati, i difetti rilevati in un test di integrazione sono più probabilmente da attribuirsi alla parte ultima aggiunta.
+Assemblare produttori prima dei consumatori, la verifica dei primi fornisce ai secondi flusso di controllo (chiamate) e flusso dei dati corretti.
+Assemblare in modo che ogni passo di integrazione sia reversibile, consente di retrocedere verso uno stato noto e sicuro.
+
+Integrazione incrementale
+Bottom-up
+Si sviluppano e si integrano prima le parti con minore dipendenza funzionale e maggiore utilità, poi si risale l’albero delle dipendenze, questa strategia riduce il numero di stub necessari al test ma porta più tardi alla disponibilità di funzionalità di alto livello.
+Top-down
+Si sviluppano prima le parti più esterne, quelle poste sulle foglie dell’albero delle dipendenze e poi si scende, questa strategia comporta l’uso di molti stub ma integra a partire dalla funzionalità di più alto livello.
+
+Test di Integrazione
+Si applica alle componenti specificate nella progettazione architetturale, la loro integrazione costituisce il sistema completo.
+La Logica di integrazione funzionale seleziona le funzionalità da integrare, identifica le componenti che svolgono quelle funzionalità,ordina le componenti per numero di dipendenze crescente (Dipendenze nel flusso di controllo (chiamata) e nel flusso di dati) ed esegue l’integrazione in quell’ordine.
+I problemi rilevati durante Test di Integrazione manifestano difetti di progettazione o insufficiente qualità nei test di unità.
+Test di Integrazione ha tanti test quanto ne servono per accertare che tutti i dati scambiati attraverso ciascun interfaccia siano conformi alla loro specifica e per accertare che tutti i flussi di controllo previsti in specifica siano stati effettivamente realizzati e provati.
+
+Test di sistema
+Verifica il comportamento dinamico del sistema completo rispetto ai requisiti SW.
+Ha inizio con il completamento del test di integrazione.
+È inerentemente funzionale (black-box) (non dovrebbe richiedere conoscenza della logica interna del software).
+
+
+Altri tipi di test
+
+Test di regressione
+Ripetizione selettiva di TIntegrazione (e poi di TSistema) integrando solo parti che abbiano precedentemente superato TUnità-> nel repository di progetto devono stare solo unità SW di questo tipo.
+Servono Per accertare che modifiche intervenute per correzione o estensione di parti non comportino errori nel sistema (Può essere molto oneroso).
+I contenuti del test di regressione vanno decisi nel momento in cui si approvano modifiche al SW.
+
+Test di accettazione (collaudo) Accertano il soddisfacimento dei requisiti utente.
+
+Fattore di copertura
+-Quanto la prova esercita il prodotto:
+Copertura funzionale (Rispetto alla percentuale di funzionalità esercitate come viste dall’esterno)
+Copertura strutturale (branch, condition) (Rispetto alla percentuale di logica interna del codice esercitata).
+-Una misura della bontà di una prova
+Copertura del 100% non prova assenza di difetti, il 100% di copertura può essere irraggiungibile (per Costi eccessivi, codice sorgente non disponibile, codice irraggiungile non eliminabile, copertura esaustiva dei cicli).
+
+Maturità di prodotto
+-Valutare il grado di evoluzione del prodotto
+Quanto il prodotto migliora in seguito alle prove
+Quanto diminuisce la densità dei difetti
+Quanto può costare la scoperta del prossimo difetto
+-Le tecniche correnti sono spesso empiriche
+Sotto l’influenza del modello code-and-fix
+-Definire un modello ideale
+Modello base: il numero di difetti del SW è una costante iniziale
+Modello logaritmico: le modifiche introducono difetti
+
+***********************************************************
+
+L15 Misurazione del software
+
+Finalità della misura è Rendere oggettivi i risultati degli esperimenti effettuati e Avere dati affidabili su cui basare modelli matematici.
+L’oggettività della misura implica ripetibilità, confrontabilità, confidenza.
+Ogni misura ha limiti intrinseci: l'Approssimazione nella misura di realtà fisiche e l'Astrazione nella misura di valutazione o di stima di concetti.
+
+Misurazione
+Processo che assegna numeri o simboli ad attributi di entità del mondo reale per descriverle secondo regole definite.
+
+Misura
+Risultato della misurazione.
+Assegnazione empirica e oggettiva di un valore (numerico o simbolo) a un’entità per caratterizzarne un attributo specifico.
+
+Metrica = insieme di regole
+Per fissare le entità da misurare, gli attributi rilevanti, l’unità di misura, la procedura per assegnare e interpretare i valori.
+
+Per caratteristiche difficilmente misurabili La misura desiderata può essere ottenuta indirettamente a partire da altre misure ottenute tramite stime o predizioni.
+Servono metriche per stimare caratteristiche Identificando gli attributi misurabili e Determinando indicatori per le caratteristiche non misurabili.
+
+Metrica secondo il glossario SWE di IEEE: Misura quantitativa del grado di possesso di uno specifico attributo da parte di un sistema, componente, processo.
+
+Obiettivi della misurazione nel SW
+-Valutare lo stato di
+ Progetti – stime, preventivi e consuntivi di costo e di tempo
+ Prodotti – qualità
+ Processi – qualità (capability, maturity), miglioramenti
+ Risorse – consumo
+-Interpretare e cogliere tendenze
+ In modo proattivo piuttosto che reattivo
+-Decidere azioni correttive
+ Magari privilegiando il maggiore effetto per il minor costo
+
+Le metriche nella produzione
+-Strumenti di valutazione e controllo
+-Entità da misurare
+ Processi insiemi correlati di procedure astratte
+ Progetti attività concrete legate a tempo e risorse
+ Prodotti beni e servizi in uscita dai progetti
+ Risorse elementi impiegati e consumati dal progetto
+-Categorie di attributi
+ Interni misurabili rispetto alle entità
+ Esterni misurabili rispetto all’ambiente
+
+Processo di misurazione-Strategie e discipline
+-(Come definire) Cosa misurare
+ISO/IEC 15939 Software Measurement Process
+Measurement Information Model: descrive i valori di misurazione da
+produrre e le relazioni tra loro
+Measurement Process Model: descrive il processo di misurazione
+-Come misurare -> Linee guida (p.es. Practical Software Measurement)
+-Cosa e perché -> CMMI
+
+Bisogni informativi
+Secondo ISO 15939 “the information needs are based on goals, constraints, risks, and problems which originate from the technical and mgmt processes”.
+CMMI suggerisce di determinarli nelle seguenti aree
+ Requirements Management
+ Design \& Implementation
+ Verification \& Validation (V\&V)
+ Quality Assurance
+ Configuration Management
+ Project Management
+ Risk analysis \& decision analysis
+ Training
+
+Metriche software
+-Problema aperto
+ Il software è difficile da misurare
+ Il software ha caratteristiche multiformi
+ Le tecnologie cambiano rapidamente
+ L’ambiente di esecuzione ha una grande influenza
+-Tipi di metriche
+ Del prodotto in sé - quanto è grande
+ Delle sue funzionalità - cosa deve fare e come lo fa
+ Del suo comportamento - cosa succede e quando
+
+Software Metrics, Norman Fenton https://archive.org/details/softwaremetricsr00fent
+
+Metriche progettuali
+- Grado di coesione -> Bieman, IEEE TSE 20:8, 1994
+- Grado di accoppiamento -> Dhama, Elseview JSS 29:1, 1995
+- Complessità strutturale -> Funzione del fan-out
+- Complessità del flusso dati -> Funzione del \# di parametri di ingresso e uscita, e della CS
+- Complessità del sistema -> Funzione di CS e CFD
+
+Metriche di programmazione
+*SLOC: la metrica più intuitiva e più usata, Linee di codice sorgente
+- Conteggio dei costrutti / comandi
+ Semplificato e adattato alle funzionalità degli editor
+ Usata per derivare informazioni di costo e produttività
+ Rapportata alla densità di commenti
+- Limiti
+ Dipendente da sintassi e potenza espressiva del linguaggio
+ Dipendente dallo stile di codifica
+
+*Complessità ciclomatica
+
+proposta da Thomas McCabe nel 1976, è indipendente dal linguaggio di programmazione.
+Complessità del flusso di controllo: funzione dei possibili cammini indipendenti all'interno di un singolo sottoprogramma.
+Limiti: fallibilità dimostrata (nonostante ciò ancora largamente usata), costosa da applicare prima di progettare il codice in dettaglio.
+Il valore rilevato va confrontato con soglie preffisate.
+Corrisponde al numero di casi di prova necessari per verificare ogni possibile esito di ogni ramo di decisione della procedura: misura la complessità del flusso di controllo ma non la complessità del flusso dei dati; il grado di fanIn e fanOut applicato ai dati può aiutare a stimare la coplessità del flusso dei dati; meglio calcolarlo usando strumenti automatici.
+
+Definizione algebrica costruita sopra il grafo di controllo G che descrive una procedura:
+v(G)=e-n+p numero dei percorsi lineari in G
+con e numeri di archi(flusso), n numero dei nodi(espressioni o comandi), p numero delle componenti connesse da ogni arco(p=2 per esecuzione sequnziale, 1 predecessore, 1 successore)
+Per esempio
+3-4+2=1 o->o->o->o 3archi 4nodi 2componendi connesse ad ogni arco
+
+Errore in difetto: la complessità reale è maggiore di quella misurata.
+Errore in eccesso: la complessità reale è inferiore a quella misurata.
+
+*Standard per misure funzionali
+
+-ISO/IEC 14143 – Functional size measurement
+ Definire la terminologia del settore
+ Definire i criteri per valutare le metriche funzionali
+ Definire i criteri per accreditare i professionisti che le usano
+-Concetti definiti
+ Accuratezza di una misura funzionale
+ Accuratezza di una metrica funzionale
+ Ripetibilità e riproducibilità di una metrica funzionale
+ Soglia di sensibilità di una metrica funzionale
+ Applicabilità a un dominio funzionale
+
+Le metriche tecniche dipendono dalla tecnologia Che è variabile nel tempo! Sono Utili come vista interna per stimare il costo di produzione.
+
+ISO/IEC 14143 (functional size measurement) aiuta a orientarsi verso metriche funzionali, Che possono fornire valori di misura più significativi, Utili come vista esterna per stimare il prezzo di vendita, La misurazione è resa indipendente dalla fase del progetto, A meno delle richieste esplicite di cambiamento.
+
+
+Misure Interne e Misure Esterne
+-Esempi di misure interne:
+Numero di requisiti, loro volatilità
+Function Points, Use Case Points
+Coesione, accoppiamento, fan-in / fan-out
+SLoC, complessità ciclomatica
+Grado di copertura delle prove
+-Esempi di misure esterne
+ISO/IEC 9126-1 (confluito in 25010:2015): valutazione delle 6
+caratteristiche di qualità di prodotto
+
+Function Point
+
+Allan J. Albrecht e John E. Gaffney, IEEE TSE 1983
+Non misura il software ma le sue entità logico-funzionali.
+Dimensione di progetto e di produttività in relazione ai requisiti funzionali.
+Indipendente dal linguaggio di programmazione.
+International Function Point User Group (IFPUG).
+Conta le funzionalità differenziate per categorie e pesate in base ad
+attributi del prodotto.
+http://www.totalmetrics.com/scope-project-sizing-software/EditionsOf-SCOPE/scope-viewer
+Misurazioni diverse possono dare risultati diversi.
+Corrispondente interessante negli Use Case Points tynerblain.com/blog/2007/02/12/software-cost-estimation-ucp-1/ .
+
+Le componenti misurate dal function point sono
+External Input EI processo elementare a seguito del quale dati entrano nella componente misurata.
+External Output EO processo elementare a seguito del quale dati escono dalla componente.
+External Inquiry EQ processo elementare per il quale specifici dati interni sono richiesti alla componente e da essa emessi.
+Internal Logical File ILF gruppo d dati correlati interni alla componente e alimentati tramite External Input.
+External Interface File EIF gruppo di dati correlati esterni alla componente e usati come riferimento.
+
+function point
+Unadjusted FP - UFP(grezzo) ciascuna xomponente vinene assoiata a uno specifico grado di complessità, ogni componente pesa quanto il suo grado di complessità.
+Adjusted FP - AFP(raffinato) ha 14 fattori d'influenza IF, ciscono con peso 0,00 e 0,05, AFP=UFPx(0,65+sommatoriaIF)
+
+Metriche per Software OO
+
+Occorrono metriche dedicate, Le metriche tradizionali non sono accurate.
+Complessità funzionale e complessità strutturale
+Non linearità del codice. La misura SLOC non funziona!
+Uso di strutture e funzioni complesse, McCabe non funziona come misura assoluta!
+Metriche per i metodi, Metriche per le classi, Metriche per i sistemi.
+
+Metrica per i metodi
+Un metodo è sostanzialmente procedurale, si può usare McCabe come metrica di base, corretta per tenere conto di interfaccie e variabili locali.
+Complessità di un metodo MC=w1MIC+w2MLVC+w3MCC
+con MIC complessità dell'interaccia del metodo, MLVC complessità delle variabili locali, MCC complessità ciclomatica del codice, wi peso determinato statisticamente.
+
+Metrica per le classi
+Complessità di una classe CC=w4CCL+w5CCI
+Proprietà della metrica per le classi: Considera solo la parte locale della classe, Considera la complessità dell’uso delle classi negli attributi.
+
+fine L15
+***************************************************************
+The 5 SOLID principles
+
+S - Single Responsibility Principle ( A class should have one, and only one, reason to change)
+O - Open‐Close Principle (You should be able to extend a classes behavior, without modifying it)
+L - Liskov Substitution Principle ( Derived classes must be substitutable for their base classes)
+I - Interface Segregation Principle (Make fine grained interfaces that are client specific)
+D - Dependency Inversion Principle (Depend on abstractions, not on concretions)
+
+Structured programming and Object‐oriented programming are Two of the most important revolution of IT industry,
+(Everyone uses OO languages, but Today's programmers are unaware of the principles that are the foundation of Object Orientation).
+
+Dependency management is The art of making code flexible, robust, and reusable (It’s too easy to get a bunch of tangled legacy code).
+SOLID principles, is A set of class design principles that helps to manage dependency.
+
+
+1 - SINGLE RESPONSIBILITY PRINCIPLE ( A class should have one, and only one, reason to change)
+
+Also known as cohesion, is the Functional relatedness of the elements of a module. A module should have only one reason to change, We call this reason of change responsibility.
+
+Coupled responsibilities:
+Changes to one responsibility may impair or inhibit the class’ ability to meet the others.
+Fragile design that break in unexpected ways (Recompilation, test, deploy, ecc).
+
+What is really a responsibility? An axis of change is only an axis of change if the changes actually occur. The context of the application is also important, Needless complexity Complessità inutile.
+
+Nell'esercizio 
+MArketApplication-->Bill<--MarketRESTService (quarto appello)
+Bill possiede items:List e addItem(item):void, getTotal():double,  toJson():string. 
+Per dividere il cambiamento si può per primo dividere il metodo toJSON(), non stacchiamo getTotal() perchè ha bisogno delle informazioni, come la rappresentazione degli item, contenute nell'oggetto, quindi condivide lo stesso asse di cambiamento dell'oggetto. Posso modificare toJSON() senza modificare gli altri metodi.
+
+MarketApplication --> Bill <-- TransformBill <-- MarketRESTService
+toJSON() metodo di transfomBill e gli latri metodi, Bill non contiene più toJSON(). I due client Market rimangono come prima.
+TransformBill, rappresentazione trsaferibile attraverso REST di un conto, ha toJSON():string.
+
+Nella domanda
+Il modo in cui si aggrega (COESIONE) non può essere casuale, va regolato con principi di aggregazione: "metti insieme le cose che se cambieranno, cambieranno insieme". Architettura è buona se facilmente comprensibile e manutenibile. Manutenzione quindi modifica(economica non stravolgimento).[Stakeholder unico] Single Responsibility Principle è un criterio per arrivare a soddifare la coesione. Ricette concrete: i pattern soecializzano le funzioni quindi aiutano la coesione.
+Aggregare delle funzionalità -> le procedure (che all'inizio non esistevano) sono utili perchè coese. 
+
+2 - OPEN‐CLOSE PRINCIPLE (You should be able to extend a classes behavior, without modifying it)
+
+There are many heuristics in OOD. "All member variables should be private”, “Global variables should be avoided”, “Using run time type identification (RTTI) is dangerous”. 
+Software entities should be open for extension, but closed for modification. You extend behaviour adding new code, not changing the old. The Open‐Close Principle underlines these heuristics.
+
+Abstraction is the key. Abstract types are the fixed part, derivate classes points of extension.
+
+client ---- Server
+Client class must be changed to name the new server class.
+client ---- AbstractServer <--- Server
+If we want Client objects to use a different server class, then a new
+derivative of the AbstractServer class can be created. The Client class can remain unchanged.
+
+Shape possiede draw() e drawAll()
+Square e Circle derivano da Shape
+That conforms to openclose principle. To extend the behavior of the drawAll to draw a new kind of shape, all we need do is add a new derivative of the Shape class.
+
+Programs conforming to OCP do not experience «cascade of changes», 
+Changes are obtained adding new code.
+
+No program can be 100% closed, Closure must be strategic! 
+Closure can be gained through abstraction Using interfaces and polimorphim (The draw abstract method in the Shape class).
+...or can be gained in a «data‐driven» fashion, Sometimes using information configured in external structure can be the only solution
+(What if we want to draw shapes in a specific order that depends from type!?).
+
+Conventions and heuristics derived from Open Closed Principle:
+Make all member variables private: When the member variables of a class change, every function that depends upon them must be changed!
+Encapsulation, No global variables (ever), No module that depends upon a global variable can be closed against any other module that might write to that variable. There are very few cases that can disobey (i.e. cin, cout). RTTI is dangerous.
+
+3 - LISKOV SUBSTITUTION PRINCIPLE ( Derived classes must be substitutable for their base classes)
+Abstraction and polymorphism At the basis of OOD and OCP. What are the characteristics of the best inheritance hierarchies? What are the traps?
+
+Liskov Substitution Principle: "Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it". Is a special case of LSP.
+Violating this principle means violationg OpenClosedPrinciple (Function that uses a pointer or reference to a base class, but must know about all the derivatives of that base class).
+
+A model, viewed in isolation, can not be meaningfully validated. The validity of a model can only be expressed in terms of its clients. What counts is extrinsic public behavior, Behavior that clients depend upon. The relation between Square and Rectangle is not a IS‐A relation in OOD.
+
+Design by contract "...when redefining a routine [in a derivative], you may only replace its precondition by a weaker one, and its postcondition by a stronger one". Methods of classes declare preconditions and postconditions (invariants).
+
+Design by contract
+In a derivate class preconditions must not be stronger than in the base class, Using base class interface a client knows only base class preconditions.
+In a derivate class postconditions must be stronger than in the base class, Derived class must conform to all base class prostcondition.
+The behaviors and outputs must not violate any of the constraints established for the base class.
+(Java and JVM base languages have assert primitive. C++ does not have anything such this).
+
+4 - INTERFACE SEGREGATION PRINCIPLE (Make fine grained interfaces that are client specific)
+
+"Clients should not be forced to depend upon interfaces that they do
+not use".
+
+Reducing coupling means to depend upon interfaces, not implementations. The risk is to depend upon a «fat» or «polluted» interfaces. Fat interfaces are not cohesive: Methods can be broken up into groups of functions, Clients must view only the part they are interested to.
+
+
+  door              TimerCLient
+TimerDoor <----<> DoorTimerAdapter 
+           ----->
+DoorTimerAdapter translates a Door into a TimerClient, Clients of Door and TimerClient are not coupled anymore.
++++Separation by delegation: Object form the Adapter design pattern. 
+
+Door Timerclient
+  TimedDoor
++++Separation through multiple inheritance: Class form the Adapter design pattern.
+
+Violation Example: The Door class now depends upon TimerClient. Not all varieties of Door need timing. Moreover, the applications that use those derivatives will have to import the definition of the TimerClient class, even though it is not used. The interface of Door has been polluted with an interface that it does not require. Each time a new interface is added to the base class, that interface must be implemented in derived classes. Default implementations violate the Liskov Substitution Principle (LSP). Sometimes it is the client that forces a change to an interface, Also the Door interface have to be changed, Clients that does not need timer doors will also be affected, The result is a inadvertent involontario coupling between all the clients.
+
+5 - DEPENDENCY INVERSION PRINCIPLE (Depend on abstractions, not on concretions) terzo appello
+
+"High level modules should not depend upon low level modules. Both should depend upon abstractions. Abstractions should not depend upon details. Details should depend upon abstractions".
+
+Important policy decisions are in high level modules. It’s these modules we want to be able to reuse. Template method design pattern.
+In layered application, each layer should expose a proper level of abstraction (interface). A naive implementation can force wrong dependency among modules.
+
+ReadKeyboard <- copy -> WritePaper
+Consider a simple program that is charged with the task of copying characters typed on a keyboard to a printer. “Read keyboard” and “Write printer” are quite reusable. However the “Copy” module is not reusable in any context that does not involve keyboard and printer.
+
+KeyboardReader --- Read <- copy -> Write --- PrinterWriter
+We have performed dependency inversion. the dependencies have been inverted; the “Copy” class depends upon abstractions, and the detailed readers and writers depend upon the same abstractions.
+Now we can reuse the “Copy” class, independently of the “Keyboard Reader” and the “Printer Writer”. 
+
+Module containing high level policy should be independent upon low level details modules. We have use abstraction to limit dependency.
+
+III appello 
+                         reader<--copier-->writer
+KeyboardReader SocketReader                   PrinterWriter HDFSwriter
+
+***********************************************************
+-private +public \# protected ~package
+
+\end{document}
